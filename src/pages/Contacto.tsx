@@ -1,0 +1,266 @@
+
+import React, { useState } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Textarea } from '../components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import { Mail, Phone, Info, MessageCircle } from 'lucide-react';
+import { toast } from 'sonner';
+
+const Contacto = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    interest: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData(prev => ({ ...prev, interest: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    toast.success('Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.');
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      interest: '',
+      message: ''
+    });
+  };
+
+  return (
+    <>
+      <Navbar />
+      <div className="pt-20"> {/* Adding padding for the fixed navbar */}
+        {/* Hero Section */}
+        <section className="bg-gradient-hero text-white py-16">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center">
+              <h1 className="text-4xl font-bold mb-4">Contacto</h1>
+              <p className="text-lg max-w-3xl mx-auto">
+                ¿Tienes alguna pregunta o quieres saber más sobre nuestros servicios?
+                Estaremos encantados de ayudarte.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col md:flex-row gap-12">
+              <div className="md:w-1/2">
+                <h2 className="text-3xl font-bold mb-6">Envíanos un mensaje</h2>
+                <p className="text-gray-600 mb-8">
+                  Rellena el formulario y nos pondremos en contacto contigo lo antes posible.
+                </p>
+                
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                      Nombre completo *
+                    </label>
+                    <Input 
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      placeholder="Tu nombre"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      Email *
+                    </label>
+                    <Input 
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      placeholder="tu@email.com"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                      Teléfono
+                    </label>
+                    <Input 
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+34 XXX XXX XXX"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                      Empresa
+                    </label>
+                    <Input 
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      placeholder="Nombre de tu empresa"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-1">
+                      ¿En qué estás interesado? *
+                    </label>
+                    <Select value={formData.interest} onValueChange={handleSelectChange} required>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Selecciona un servicio" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="transformacion-digital">Transformación Digital</SelectItem>
+                        <SelectItem value="inteligencia-artificial">Inteligencia Artificial</SelectItem>
+                        <SelectItem value="desarrollo-aplicaciones">Desarrollo de Aplicaciones</SelectItem>
+                        <SelectItem value="formacion">Formación</SelectItem>
+                        <SelectItem value="consultoria">Consultoría</SelectItem>
+                        <SelectItem value="outsourcing">Outsourcing</SelectItem>
+                        <SelectItem value="otro">Otro</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                      Mensaje *
+                    </label>
+                    <Textarea 
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      placeholder="¿En qué podemos ayudarte?"
+                      rows={5}
+                    />
+                  </div>
+                  
+                  <Button type="submit" className="w-full bg-xappiens-purple hover:bg-xappiens-blue">
+                    Enviar mensaje
+                  </Button>
+                </form>
+              </div>
+              
+              <div className="md:w-1/2">
+                <h2 className="text-3xl font-bold mb-6">Información de contacto</h2>
+                <p className="text-gray-600 mb-8">
+                  Puedes contactarnos directamente a través de los siguientes medios:
+                </p>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 rounded-full bg-xappiens-purple/10 flex items-center justify-center text-xappiens-purple mr-4">
+                      <Mail size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-1">Email</h3>
+                      <p className="text-gray-600">info@xappiens.com</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 rounded-full bg-xappiens-purple/10 flex items-center justify-center text-xappiens-purple mr-4">
+                      <Phone size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-1">Teléfono</h3>
+                      <p className="text-gray-600">+34 900 123 456</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 rounded-full bg-xappiens-purple/10 flex items-center justify-center text-xappiens-purple mr-4">
+                      <MessageCircle size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-1">Chat en vivo</h3>
+                      <p className="text-gray-600">Disponible de lunes a viernes, de 9:00 a 18:00</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 rounded-full bg-xappiens-purple/10 flex items-center justify-center text-xappiens-purple mr-4">
+                      <Info size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-1">Dirección</h3>
+                      <p className="text-gray-600">
+                        Calle Innovación, 123<br />
+                        28001 Madrid, España
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-8">
+                  <h3 className="text-lg font-semibold mb-4">Horario de atención</h3>
+                  <ul className="space-y-2 text-gray-600">
+                    <li className="flex justify-between">
+                      <span>Lunes - Viernes</span>
+                      <span>9:00 - 18:00</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Sábado</span>
+                      <span>Cerrado</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Domingo</span>
+                      <span>Cerrado</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Map Section */}
+        <section className="bg-gray-50 py-16">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-4">Encuéntranos</h2>
+              <p className="text-lg text-gray-600">
+                Visita nuestras oficinas centrales en Madrid
+              </p>
+            </div>
+            
+            <div className="h-80 bg-gray-300 rounded-lg">
+              {/* Here would go a Google Map or similar */}
+              <div className="h-full flex items-center justify-center">
+                <p className="text-gray-500">Mapa interactivo</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default Contacto;
