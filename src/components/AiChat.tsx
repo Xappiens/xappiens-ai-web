@@ -43,7 +43,11 @@ const AiChat = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSend = () => {
+  const handleSend = (e?: React.FormEvent) => {
+    if (e) {
+      e.preventDefault();
+    }
+    
     if (input.trim() === '') return;
     
     // Add user message
@@ -84,7 +88,8 @@ const AiChat = () => {
     }, 800);
   };
 
-  const handlePredefinedButtonClick = (type: keyof typeof predefinedResponses) => {
+  const handlePredefinedButtonClick = (e: React.MouseEvent, type: keyof typeof predefinedResponses) => {
+    e.preventDefault();
     const responseText = predefinedResponses[type];
     
     const aiResponse: Message = {
@@ -132,7 +137,7 @@ const AiChat = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => handlePredefinedButtonClick('servicios')}
+            onClick={(e) => handlePredefinedButtonClick(e, 'servicios')}
             className="text-xs"
           >
             <Info className="mr-1 h-3 w-3" />
@@ -141,7 +146,7 @@ const AiChat = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => handlePredefinedButtonClick('contacto')}
+            onClick={(e) => handlePredefinedButtonClick(e, 'contacto')}
             className="text-xs"
           >
             <Mail className="mr-1 h-3 w-3" />
@@ -150,7 +155,7 @@ const AiChat = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => handlePredefinedButtonClick('ia')}
+            onClick={(e) => handlePredefinedButtonClick(e, 'ia')}
             className="text-xs"
           >
             <Book className="mr-1 h-3 w-3" />
@@ -159,7 +164,7 @@ const AiChat = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => handlePredefinedButtonClick('formacion')}
+            onClick={(e) => handlePredefinedButtonClick(e, 'formacion')}
             className="text-xs"
           >
             <Book className="mr-1 h-3 w-3" />
@@ -168,7 +173,7 @@ const AiChat = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => handlePredefinedButtonClick('transformacion')}
+            onClick={(e) => handlePredefinedButtonClick(e, 'transformacion')}
             className="text-xs"
           >
             <Info className="mr-1 h-3 w-3" />
@@ -176,18 +181,17 @@ const AiChat = () => {
           </Button>
         </div>
         
-        <div className="flex gap-2">
+        <form onSubmit={handleSend} className="flex gap-2">
           <Input
             placeholder="Escribe tu mensaje..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && handleSend()}
             className="flex-1"
           />
-          <Button onClick={handleSend} className="bg-xappiens-purple hover:bg-xappiens-blue">
+          <Button type="submit" className="bg-xappiens-purple hover:bg-xappiens-blue">
             Enviar
           </Button>
-        </div>
+        </form>
       </CardContent>
     </Card>
   );
