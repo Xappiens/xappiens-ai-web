@@ -88,8 +88,12 @@ const AiChat = () => {
     }, 800);
   };
 
-  const handlePredefinedButtonClick = (e: React.MouseEvent, type: keyof typeof predefinedResponses) => {
-    e.preventDefault();
+  const handlePredefinedButtonClick = (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent default to avoid page scroll
+    
+    const type = e.currentTarget.getAttribute('data-type') as keyof typeof predefinedResponses;
+    if (!type) return;
+    
     const responseText = predefinedResponses[type];
     
     const aiResponse: Message = {
@@ -137,7 +141,8 @@ const AiChat = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={(e) => handlePredefinedButtonClick(e, 'servicios')}
+            data-type="servicios"
+            onClick={handlePredefinedButtonClick}
             className="text-xs"
           >
             <Info className="mr-1 h-3 w-3" />
@@ -146,7 +151,8 @@ const AiChat = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={(e) => handlePredefinedButtonClick(e, 'contacto')}
+            data-type="contacto"
+            onClick={handlePredefinedButtonClick}
             className="text-xs"
           >
             <Mail className="mr-1 h-3 w-3" />
@@ -155,7 +161,8 @@ const AiChat = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={(e) => handlePredefinedButtonClick(e, 'ia')}
+            data-type="ia"
+            onClick={handlePredefinedButtonClick}
             className="text-xs"
           >
             <Book className="mr-1 h-3 w-3" />
@@ -164,7 +171,8 @@ const AiChat = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={(e) => handlePredefinedButtonClick(e, 'formacion')}
+            data-type="formacion"
+            onClick={handlePredefinedButtonClick}
             className="text-xs"
           >
             <Book className="mr-1 h-3 w-3" />
@@ -173,7 +181,8 @@ const AiChat = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={(e) => handlePredefinedButtonClick(e, 'transformacion')}
+            data-type="transformacion"
+            onClick={handlePredefinedButtonClick}
             className="text-xs"
           >
             <Info className="mr-1 h-3 w-3" />
