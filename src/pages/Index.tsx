@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -6,7 +5,7 @@ import AiChat from '../components/AiChat';
 import ServiceCard from '../components/ServiceCard';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
-import { MessageSquare, Book, services, Info, Phone } from 'lucide-react';
+import { MessageSquare, Book, Info, Phone } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -66,7 +65,7 @@ const Index = () => {
               <ServiceCard 
                 title="Transformación Digital"
                 description="Te acompañamos en el proceso de transformación digital, adaptando tu empresa a los nuevos modelos de negocio."
-                icon={<services size={32} />}
+                icon={<Info size={32} />}
                 link="/transformacion-digital"
               />
               <ServiceCard 

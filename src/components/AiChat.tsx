@@ -1,9 +1,10 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { ScrollArea } from './ui/scroll-area';
 import { Card, CardContent } from './ui/card';
-import { Mail, MessageSquare, Info, Book, services } from 'lucide-react';
+import { Mail, MessageSquare, Info, Book } from 'lucide-react';
 
 interface Message {
   id: number;
@@ -134,7 +135,7 @@ const AiChat = () => {
             onClick={() => handlePredefinedButtonClick('servicios')}
             className="text-xs"
           >
-            <services className="mr-1 h-3 w-3" />
+            <Info className="mr-1 h-3 w-3" />
             Servicios
           </Button>
           <Button
