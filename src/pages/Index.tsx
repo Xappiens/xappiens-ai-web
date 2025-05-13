@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -15,8 +16,8 @@ const Index = () => {
         {/* Hero Section */}
         <section className="bg-gradient-hero text-white py-20">
           <div className="container mx-auto px-4 md:px-6 py-12">
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2 mb-10 md:mb-0">
+            <div className="flex flex-col items-center">
+              <div className="text-center mb-10 max-w-3xl mx-auto">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
                   Transformamos tu negocio con tecnología e innovación
                 </h1>
@@ -25,21 +26,23 @@ const Index = () => {
                   desarrollo de aplicaciones, inteligencia artificial, 
                   formación y consultoría para empresas que quieren liderar el futuro.
                 </p>
-                <div className="flex flex-wrap gap-4 animate-fade-in" style={{animationDelay: "0.4s"}}>
-                  <Link to="/servicios">
-                    <Button size="lg" className="bg-white text-xappiens-blue hover:bg-gray-100">
-                      Nuestros servicios
-                    </Button>
-                  </Link>
-                  <Link to="/contacto">
-                    <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                      Contáctanos
-                    </Button>
-                  </Link>
-                </div>
               </div>
-              <div className="md:w-1/2 flex justify-center animate-fade-in" style={{animationDelay: "0.6s"}}>
+              
+              <div className="w-full max-w-xl mx-auto animate-fade-in" style={{animationDelay: "0.4s"}}>
                 <AiChat />
+              </div>
+              
+              <div className="mt-10 flex flex-wrap gap-4 justify-center animate-fade-in" style={{animationDelay: "0.6s"}}>
+                <Link to="/servicios">
+                  <Button size="lg" className="bg-white text-xappiens-blue hover:bg-gray-100">
+                    Nuestros servicios
+                  </Button>
+                </Link>
+                <Link to="/contacto">
+                  <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+                    Contáctanos
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

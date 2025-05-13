@@ -102,7 +102,7 @@ const AiChat = () => {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto bg-white shadow-lg rounded-xl overflow-hidden border-xappiens-purple">
+    <Card className="w-full bg-white shadow-lg rounded-xl overflow-hidden border-xappiens-purple">
       <div className="bg-gradient-to-r from-xappiens-blue to-xappiens-purple p-4">
         <h2 className="text-white font-bold flex items-center">
           <MessageSquare className="mr-2" size={18} />
@@ -110,7 +110,7 @@ const AiChat = () => {
         </h2>
       </div>
       
-      <ScrollArea className="h-[400px] p-4">
+      <ScrollArea className="h-[350px] p-4">
         <div className="space-y-4">
           {messages.map((msg) => (
             <div
