@@ -1,10 +1,9 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { ScrollArea } from './ui/scroll-area';
 import { Card, CardContent } from './ui/card';
-import { Mail, MessageCircle, Info, Book, Service } from 'lucide-react';
+import { Mail, MessageSquare, Info, Book, services } from 'lucide-react';
 
 interface Message {
   id: number;
@@ -100,7 +99,7 @@ const AiChat = () => {
     <Card className="w-full max-w-md mx-auto bg-white shadow-lg rounded-xl overflow-hidden border-xappiens-purple">
       <div className="bg-gradient-to-r from-xappiens-blue to-xappiens-purple p-4">
         <h2 className="text-white font-bold flex items-center">
-          <MessageCircle className="mr-2" size={18} />
+          <MessageSquare className="mr-2" size={18} />
           Chat con IA de Xappiens
         </h2>
       </div>
@@ -135,7 +134,7 @@ const AiChat = () => {
             onClick={() => handlePredefinedButtonClick('servicios')}
             className="text-xs"
           >
-            <Service className="mr-1 h-3 w-3" />
+            <services className="mr-1 h-3 w-3" />
             Servicios
           </Button>
           <Button

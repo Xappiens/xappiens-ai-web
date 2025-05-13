@@ -6,7 +6,7 @@ import AiChat from '../components/AiChat';
 import ServiceCard from '../components/ServiceCard';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
-import { MessageCircle, Book, Service, Info, Phone } from 'lucide-react';
+import { MessageSquare, Book, services, Info, Phone } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -60,13 +60,13 @@ const Index = () => {
               <ServiceCard 
                 title="Inteligencia Artificial"
                 description="Implementamos soluciones de IA para automatizar procesos, analizar datos y optimizar la toma de decisiones."
-                icon={<MessageCircle size={32} />}
+                icon={<MessageSquare size={32} />}
                 link="/inteligencia-artificial"
               />
               <ServiceCard 
                 title="Transformación Digital"
                 description="Te acompañamos en el proceso de transformación digital, adaptando tu empresa a los nuevos modelos de negocio."
-                icon={<Service size={32} />}
+                icon={<services size={32} />}
                 link="/transformacion-digital"
               />
               <ServiceCard 
