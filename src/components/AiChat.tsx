@@ -33,17 +33,13 @@ const AiChat = () => {
   }]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const initialLoadRef = useRef(true);
-
-  useEffect(() => {
-    if (!initialLoadRef.current) {
-      scrollToBottom();
-    }
-    initialLoadRef.current = false;
-  }, [messages]);
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (scrollAreaRef.current) {
+      const scrollArea = scrollAreaRef.current;
+      scrollArea.scrollTop = scrollArea.scrollHeight;
+    }
   };
 
   const handleSend = (e?: React.FormEvent) => {
@@ -117,7 +113,7 @@ const AiChat = () => {
         </h2>
       </div>
       
-      <ScrollArea className="h-[350px] p-4">
+      <ScrollArea ref={scrollAreaRef} className="h-[350px] p-4">
         <div className="space-y-4">
           {messages.map((msg) => (
             <div
@@ -135,7 +131,6 @@ const AiChat = () => {
               </div>
             </div>
           ))}
-          <div ref={messagesEndRef} />
         </div>
       </ScrollArea>
       
