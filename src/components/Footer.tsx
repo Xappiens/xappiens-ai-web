@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Xappiens</h3>
+            <img src="/logo.svg" alt="Xappiens Logo" className="h-12 w-auto mb-4" />
             <p className="text-gray-400 mb-4">
               Transformando el futuro digital de las empresas con soluciones innovadoras.
             </p>
@@ -37,11 +37,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Servicios</h4>
             <ul className="space-y-2">
-              <li><Link to="/servicios" className="text-gray-400 hover:text-white transition">Servicios</Link></li>
-              <li><Link to="/inteligencia-artificial" className="text-gray-400 hover:text-white transition">IA</Link></li>
-              <li><Link to="/transformacion-digital" className="text-gray-400 hover:text-white transition">Transformación Digital</Link></li>
-              <li><Link to="/formacion" className="text-gray-400 hover:text-white transition">Formación</Link></li>
-              <li><Link to="/consultoria" className="text-gray-400 hover:text-white transition">Consultoría</Link></li>
+              <li><Link to="/servicios" className="text-gray-400 hover:text-white transition">Desarrollo Web</Link></li>
+              <li><Link to="/servicios" className="text-gray-400 hover:text-white transition">Inteligencia Artificial</Link></li>
+              <li><Link to="/servicios" className="text-gray-400 hover:text-white transition">Transformación Digital</Link></li>
+              <li><Link to="/servicios" className="text-gray-400 hover:text-white transition">Consultoría</Link></li>
+              <li><Link to="/servicios" className="text-gray-400 hover:text-white transition">Formación</Link></li>
             </ul>
           </div>
           
@@ -126,20 +126,10 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Xappiens. Todos los derechos reservados.
-          </div>
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center text-gray-400 text-sm">
-              <Brain className="w-4 h-4 mr-2" />
-              <span>Desarrollado con IA</span>
-            </div>
-            <div className="text-gray-400 text-sm">
-              {VERSION.toString()}
-            </div>
-          </div>
+
+        <div className="text-center text-gray-400 text-sm">
+          <p>© {new Date().getFullYear()} Xappiens. Todos los derechos reservados.</p>
+          <p className="mt-1">Versión {VERSION.toString()}</p>
         </div>
       </div>
     </footer>
