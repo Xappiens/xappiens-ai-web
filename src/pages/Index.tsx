@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -12,7 +11,7 @@ const Index = () => {
   return (
     <>
       <Navbar />
-      <div className="pt-20"> {/* Adding padding for the fixed navbar */}
+      <main className="min-h-screen">
         {/* Hero Section */}
         <section className="bg-gradient-hero text-white py-20">
           <div className="container mx-auto px-4 md:px-6 py-12">
@@ -160,7 +159,7 @@ const Index = () => {
             </Link>
           </div>
         </section>
-      </div>
+      </main>
       <Footer />
     </>
   );
