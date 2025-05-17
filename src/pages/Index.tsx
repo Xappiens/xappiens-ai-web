@@ -63,18 +63,21 @@ const Index = () => {
                 description="Implementamos soluciones de IA para automatizar procesos, analizar datos y optimizar la toma de decisiones."
                 icon={<MessageSquare size={32} />}
                 link="/inteligencia-artificial"
+                image="/images/ia.jpg"
               />
               <ServiceCard 
                 title="Transformación Digital"
                 description="Te acompañamos en el proceso de transformación digital, adaptando tu empresa a los nuevos modelos de negocio."
                 icon={<Info size={32} />}
                 link="/transformacion-digital"
+                image="/images/td.jpg"
               />
               <ServiceCard 
                 title="Desarrollo de Aplicaciones"
                 description="Creamos aplicaciones a medida, móviles y web, con las últimas tecnologías para potenciar tu negocio."
                 icon={<Book size={32} />}
                 link="/servicios"
+                image="/images/da.jpg"
               />
               <ServiceCard 
                 title="Formación"
@@ -93,6 +96,7 @@ const Index = () => {
                 description="Ofrecemos servicios de externalización de personal IT para cubrir tus necesidades puntuales o permanentes."
                 icon={<Phone size={32} />}
                 link="/servicios"
+                image="/images/outsourcing.jpg"
               />
             </div>
             

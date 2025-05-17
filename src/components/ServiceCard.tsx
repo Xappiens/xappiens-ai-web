@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -9,11 +8,22 @@ interface ServiceCardProps {
   description: string;
   icon: React.ReactNode;
   link: string;
+  image?: string;
 }
 
-const ServiceCard = ({ title, description, icon, link }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, icon, link, image }: ServiceCardProps) => {
   return (
-    <Card className="border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+    <Card className="border border-gray-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+      {image && (
+        <div className="relative h-48 w-full">
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+        </div>
+      )}
       <CardHeader className="flex justify-center items-center pb-2">
         <div className="w-16 h-16 rounded-full bg-xappiens-purple/10 flex items-center justify-center text-xappiens-purple mb-4">
           {icon}
