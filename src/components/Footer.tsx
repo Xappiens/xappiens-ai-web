@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <img src="/xappiens.png" alt="Xappiens Logo" className="h-12 w-auto mb-4" />
+            <img src="/xappiens.png.png" alt="Xappiens Logo" className="h-12 w-auto mb-4" />
             <p className="text-gray-400 mb-4">
               Transformando el futuro digital de las empresas con soluciones innovadoras.
             </p>

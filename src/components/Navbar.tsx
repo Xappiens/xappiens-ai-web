@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6 py-2">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <img src="/xappiens.png" alt="Xappiens Logo" className="h-10 w-auto" />
+            <img src="/xappiens.png.png" alt="Xappiens Logo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
