@@ -20,6 +20,13 @@ git pull origin main || {
     exit 1
 }
 
+# Subir cambios al repositorio remoto
+echo -e "${YELLOW}Subiendo cambios al repositorio...${NC}"
+git push origin main || {
+    echo -e "${RED}Error al subir cambios al repositorio${NC}"
+    exit 1
+}
+
 # Instalar dependencias
 echo -e "${YELLOW}Instalando dependencias...${NC}"
 npm install || {
