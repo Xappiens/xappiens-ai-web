@@ -18,7 +18,9 @@ echo -e "${YELLOW}Actualizando versión...${NC}"
 VERSION_FILE="src/config/version.ts"
 if [ -f "$VERSION_FILE" ]; then
     # Incrementar el número de build
-    sed -i "s/build: [0-9]*/build: $(date +%s)/" "$VERSION_FILE"
+    CURRENT_BUILD=$(grep -o 'build: [0-9]*' "$VERSION_FILE" | cut -d' ' -f2)
+    NEW_BUILD=$((CURRENT_BUILD + 1))
+    sed -i "s/build: [0-9]*/build: $NEW_BUILD/" "$VERSION_FILE"
     echo -e "${GREEN}Versión actualizada${NC}"
 else
     echo -e "${RED}Error: Archivo de versión no encontrado${NC}"
