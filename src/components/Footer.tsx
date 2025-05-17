@@ -1,18 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { VERSION } from '../config/version';
-import { Brain } from 'lucide-react';
+import { Brain, ExternalLink, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
+  const phoneNumber = "34614230720";
+  const whatsappUrl = `https://wa.me/${phoneNumber}`;
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Xappiens</h3>
-            <p className="text-gray-400">
+            <p className="text-gray-400 mb-4">
               Transformando el futuro digital de las empresas con soluciones innovadoras.
             </p>
+            <div className="space-y-2">
+              <p className="text-gray-400">info@xappiens.com</p>
+              <div className="flex items-center space-x-2">
+                <p className="text-gray-400">+34 614 230 720</p>
+                <a 
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-500 hover:text-green-400 transition-colors"
+                  title="Contactar por WhatsApp"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                </a>
+              </div>
+              <p className="text-gray-400">Madrid, España</p>
+            </div>
           </div>
           
           <div>
@@ -27,11 +46,41 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contacto</h4>
+            <h4 className="text-lg font-semibold mb-4">Proyectos</h4>
             <ul className="space-y-2">
-              <li className="text-gray-400">info@xappiens.com</li>
-              <li className="text-gray-400">+34 900 123 456</li>
-              <li className="text-gray-400">Madrid, España</li>
+              <li>
+                <a 
+                  href="https://www.workya.pro" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition flex items-center"
+                >
+                  WorkYa.pro
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://canadabcexperience.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition flex items-center"
+                >
+                  CanadaBCExperience
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.abelramos.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition flex items-center"
+                >
+                  Abel Ramos
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </li>
             </ul>
           </div>
           
