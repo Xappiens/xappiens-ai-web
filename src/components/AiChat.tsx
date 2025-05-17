@@ -34,6 +34,7 @@ const AiChat = () => {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const initialLoadRef = useRef(true);
 
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
@@ -41,6 +42,14 @@ const AiChat = () => {
       scrollArea.scrollTop = scrollArea.scrollHeight;
     }
   };
+
+  useEffect(() => {
+    // Solo hacer scroll si no es la carga inicial y hay nuevos mensajes
+    if (!initialLoadRef.current && messages.length > 1) {
+      scrollToBottom();
+    }
+    initialLoadRef.current = false;
+  }, [messages]);
 
   const handleSend = (e?: React.FormEvent) => {
     if (e) {
