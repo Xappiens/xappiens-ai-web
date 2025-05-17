@@ -112,7 +112,11 @@ const Index = () => {
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-10 md:mb-0">
                 <div className="relative">
-                  <div className="w-full h-80 bg-gray-300 rounded-lg"></div>
+                  <img 
+                    src="/AbelRamos_Xappiens.webp" 
+                    alt="Abel Ramos - Fundador de Xappiens" 
+                    className="w-full h-80 object-cover rounded-lg"
+                  />
                   <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-xappiens-purple/10 rounded-lg"></div>
                 </div>
               </div>
