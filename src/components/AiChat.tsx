@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -34,9 +33,13 @@ const AiChat = () => {
   }]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const initialLoadRef = useRef(true);
 
   useEffect(() => {
-    scrollToBottom();
+    if (!initialLoadRef.current) {
+      scrollToBottom();
+    }
+    initialLoadRef.current = false;
   }, [messages]);
 
   const scrollToBottom = () => {
