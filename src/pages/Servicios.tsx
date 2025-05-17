@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -31,12 +30,17 @@ const Servicios = () => {
               {/* Service 1 */}
               <Card className="overflow-hidden border-0 shadow-lg">
                 <div className="flex flex-col md:flex-row">
-                  <div className="md:w-1/3 bg-xappiens-purple/10 p-8 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-20 h-20 rounded-full bg-xappiens-purple text-white flex items-center justify-center text-3xl mx-auto mb-4">
-                        IA
+                  <div className="md:w-1/3 relative">
+                    <img 
+                      src="/images/ia.jpg" 
+                      alt="Inteligencia Artificial" 
+                      className="w-full h-full object-cover absolute inset-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-xappiens-purple/80 to-transparent"></div>
+                    <div className="relative p-8 flex items-center justify-center h-full">
+                      <div className="text-center">
+                        <h3 className="text-2xl font-bold text-white">Inteligencia Artificial</h3>
                       </div>
-                      <h3 className="text-2xl font-bold text-xappiens-purple">Inteligencia Artificial</h3>
                     </div>
                   </div>
                   <CardContent className="md:w-2/3 p-8">
@@ -83,12 +87,17 @@ const Servicios = () => {
               {/* Service 2 */}
               <Card className="overflow-hidden border-0 shadow-lg">
                 <div className="flex flex-col md:flex-row">
-                  <div className="md:w-1/3 bg-xappiens-purple/10 p-8 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-20 h-20 rounded-full bg-xappiens-purple text-white flex items-center justify-center text-3xl mx-auto mb-4">
-                        TD
+                  <div className="md:w-1/3 relative">
+                    <img 
+                      src="/images/td.jpg" 
+                      alt="Transformación Digital" 
+                      className="w-full h-full object-cover absolute inset-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-xappiens-purple/80 to-transparent"></div>
+                    <div className="relative p-8 flex items-center justify-center h-full">
+                      <div className="text-center">
+                        <h3 className="text-2xl font-bold text-white">Transformación Digital</h3>
                       </div>
-                      <h3 className="text-2xl font-bold text-xappiens-purple">Transformación Digital</h3>
                     </div>
                   </div>
                   <CardContent className="md:w-2/3 p-8">
@@ -135,12 +144,17 @@ const Servicios = () => {
               {/* Service 3 */}
               <Card className="overflow-hidden border-0 shadow-lg">
                 <div className="flex flex-col md:flex-row">
-                  <div className="md:w-1/3 bg-xappiens-purple/10 p-8 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-20 h-20 rounded-full bg-xappiens-purple text-white flex items-center justify-center text-3xl mx-auto mb-4">
-                        DA
+                  <div className="md:w-1/3 relative">
+                    <img 
+                      src="/images/da.jpg" 
+                      alt="Desarrollo de Aplicaciones" 
+                      className="w-full h-full object-cover absolute inset-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-xappiens-purple/80 to-transparent"></div>
+                    <div className="relative p-8 flex items-center justify-center h-full">
+                      <div className="text-center">
+                        <h3 className="text-2xl font-bold text-white">Desarrollo de Aplicaciones</h3>
                       </div>
-                      <h3 className="text-2xl font-bold text-xappiens-purple">Desarrollo de Aplicaciones</h3>
                     </div>
                   </div>
                   <CardContent className="md:w-2/3 p-8">
@@ -185,12 +199,17 @@ const Servicios = () => {
               {/* Service 4 */}
               <Card className="overflow-hidden border-0 shadow-lg">
                 <div className="flex flex-col md:flex-row">
-                  <div className="md:w-1/3 bg-xappiens-purple/10 p-8 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-20 h-20 rounded-full bg-xappiens-purple text-white flex items-center justify-center text-3xl mx-auto mb-4">
-                        OS
+                  <div className="md:w-1/3 relative">
+                    <img 
+                      src="/images/outsourcing.jpg" 
+                      alt="Outsourcing" 
+                      className="w-full h-full object-cover absolute inset-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-xappiens-purple/80 to-transparent"></div>
+                    <div className="relative p-8 flex items-center justify-center h-full">
+                      <div className="text-center">
+                        <h3 className="text-2xl font-bold text-white">Outsourcing</h3>
                       </div>
-                      <h3 className="text-2xl font-bold text-xappiens-purple">Outsourcing</h3>
                     </div>
                   </div>
                   <CardContent className="md:w-2/3 p-8">

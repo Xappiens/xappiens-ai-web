@@ -84,12 +84,14 @@ const Index = () => {
                 description="Capacitamos a tu equipo en las últimas tecnologías y metodologías para mejorar su rendimiento."
                 icon={<Book size={32} />}
                 link="/formacion"
+                image="/images/formacion.jpg"
               />
               <ServiceCard 
                 title="Consultoría"
                 description="Asesoramos a tu empresa en la implementación de soluciones tecnológicas y en la optimización de procesos."
                 icon={<Info size={32} />}
                 link="/consultoria"
+                image="/images/consultoria.jpg"
               />
               <ServiceCard 
                 title="Outsourcing"
