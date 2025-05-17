@@ -8,6 +8,11 @@ NC='\033[0m' # No Color
 
 echo -e "${YELLOW}Iniciando despliegue...${NC}"
 
+# Configurar usuario de git
+echo -e "${YELLOW}Configurando usuario de git...${NC}"
+git config user.name "Xappiens"
+git config user.email "xappiens@xappiens.com"
+
 # Guardar cambios locales si existen
 echo -e "${YELLOW}Guardando cambios locales...${NC}"
 git add .
