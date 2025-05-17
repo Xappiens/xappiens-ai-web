@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -47,7 +46,14 @@ const InteligenciaArtificial = () => {
                 </div>
               </div>
               <div className="md:w-1/2">
-                <div className="aspect-video bg-gray-200 rounded-lg"></div>
+                <div className="relative">
+                  <img 
+                    src="/abelramos_ia.jpg" 
+                    alt="Abel Ramos - Experto en IA" 
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                  <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-xappiens-purple/10 rounded-lg"></div>
+                </div>
               </div>
             </div>
           </div>
