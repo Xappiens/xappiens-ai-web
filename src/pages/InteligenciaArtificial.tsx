@@ -48,7 +48,7 @@ const InteligenciaArtificial = () => {
               <div className="md:w-1/2">
                 <div className="relative">
                   <img 
-                    src="/abelramos_ia.jpg" 
+                    src="/images/abelramos_ia.webp" 
                     alt="Abel Ramos - Experto en IA" 
                     className="w-full h-full object-cover rounded-lg"
                   />
