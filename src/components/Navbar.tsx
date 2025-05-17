@@ -40,8 +40,10 @@ const Navbar = () => {
             <Link to="/consultoria" className="text-xappiens-text hover:text-xappiens-purple transition">
               Consultoría
             </Link>
-            <Link to="/contacto" className="text-xappiens-text hover:text-xappiens-purple transition">
-              Contacto
+            <Link to="/contacto">
+              <Button className="bg-xappiens-purple text-white hover:bg-xappiens-blue transition-colors duration-200">
+                Contacto
+              </Button>
             </Link>
           </div>
 
@@ -101,10 +103,11 @@ const Navbar = () => {
               </Link>
               <Link 
                 to="/contacto" 
-                className="text-xappiens-text hover:text-xappiens-purple transition py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contacto
+                <Button className="w-full bg-xappiens-purple text-white hover:bg-xappiens-blue transition-colors duration-200">
+                  Contacto
+                </Button>
               </Link>
             </div>
           </div>
