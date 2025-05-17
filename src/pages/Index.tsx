@@ -33,12 +33,12 @@ const Index = () => {
               
               <div className="mt-10 flex flex-wrap gap-4 justify-center animate-fade-in" style={{animationDelay: "0.6s"}}>
                 <Link to="/servicios">
-                  <Button size="lg" className="bg-white text-xappiens-blue hover:bg-gray-100">
+                  <Button size="lg" className="bg-white text-xappiens-blue hover:bg-xappiens-purple hover:text-white transition-colors duration-200">
                     Nuestros servicios
                   </Button>
                 </Link>
                 <Link to="/contacto">
-                  <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+                  <Button size="lg" variant="outline" className="bg-xappiens-purple text-white border-white hover:bg-white hover:text-xappiens-blue transition-colors duration-200">
                     Contáctanos
                   </Button>
                 </Link>
