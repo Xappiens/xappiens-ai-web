@@ -1,6 +1,6 @@
 export const VERSION = {
   major: 0,
   minor: 0,
-  patch: 3,
+  patch: 4,
   toString: () => `v${VERSION.major}.${VERSION.minor}.${VERSION.patch}`
 }; 
