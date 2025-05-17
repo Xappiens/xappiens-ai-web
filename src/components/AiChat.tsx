@@ -32,23 +32,22 @@ const AiChat = () => {
     isUser: false
   }]);
   const [input, setInput] = useState('');
-  const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
-  const initialLoadRef = useRef(true);
 
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
       const scrollArea = scrollAreaRef.current;
-      scrollArea.scrollTop = scrollArea.scrollHeight;
+      // Aseguramos que el scroll se haga dentro del área de conversación
+      const scrollContainer = scrollArea.querySelector('[data-radix-scroll-area-viewport]');
+      if (scrollContainer) {
+        scrollContainer.scrollTop = scrollContainer.scrollHeight;
+      }
     }
   };
 
   useEffect(() => {
-    // Solo hacer scroll si no es la carga inicial y hay nuevos mensajes
-    if (!initialLoadRef.current && messages.length > 1) {
-      scrollToBottom();
-    }
-    initialLoadRef.current = false;
+    // Hacemos scroll al final cuando se añaden nuevos mensajes
+    scrollToBottom();
   }, [messages]);
 
   const handleSend = (e?: React.FormEvent) => {
