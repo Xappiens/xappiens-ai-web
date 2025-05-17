@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { VERSION } from '../config/version';
-import { Brain, ExternalLink, MessageCircle } from 'lucide-react';
+import { Brain, ExternalLink, MessageCircle, Youtube } from 'lucide-react';
 
 const Footer = () => {
   const phoneNumber = "34614230720";
@@ -31,6 +31,31 @@ const Footer = () => {
                 </a>
               </div>
               <p className="text-gray-400">Madrid, España</p>
+            </div>
+            <div className="mt-4">
+              <h4 className="text-lg font-semibold mb-2">Redes Sociales</h4>
+              <div className="space-y-2">
+                <a 
+                  href="https://www.youtube.com/@abelramosc" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition flex items-center"
+                >
+                  <Youtube className="w-5 h-5 mr-2 text-red-500" />
+                  <span>Abel Ramos</span>
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+                <a 
+                  href="https://www.youtube.com/@HayunaIAparaeso" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition flex items-center"
+                >
+                  <Youtube className="w-5 h-5 mr-2 text-red-500" />
+                  <span>Hay una IA para eso</span>
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </div>
             </div>
           </div>
           
