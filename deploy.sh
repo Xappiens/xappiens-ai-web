@@ -13,15 +13,14 @@ echo -e "${YELLOW}Configurando usuario de git...${NC}"
 git config user.name "Xappiens"
 git config user.email "xappiens@xappiens.com"
 
-# Actualizar versión
+# Actualizar versión semántica (patch)
 echo -e "${YELLOW}Actualizando versión...${NC}"
 VERSION_FILE="src/config/version.ts"
 if [ -f "$VERSION_FILE" ]; then
-    # Incrementar el número de build
-    CURRENT_BUILD=$(grep -o 'build: [0-9]*' "$VERSION_FILE" | cut -d' ' -f2)
-    NEW_BUILD=$((CURRENT_BUILD + 1))
-    sed -i "s/build: [0-9]*/build: $NEW_BUILD/" "$VERSION_FILE"
-    echo -e "${GREEN}Versión actualizada${NC}"
+    CURRENT_PATCH=$(grep 'patch:' "$VERSION_FILE" | head -1 | grep -o '[0-9]\+')
+    NEW_PATCH=$((CURRENT_PATCH + 1))
+    sed -i "s/patch: $CURRENT_PATCH/patch: $NEW_PATCH/" "$VERSION_FILE"
+    echo -e "${GREEN}Versión actualizada a patch $NEW_PATCH${NC}"
 else
     echo -e "${RED}Error: Archivo de versión no encontrado${NC}"
     exit 1
