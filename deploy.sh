@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Colores para output
+# Colores para mensajes
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
 echo -e "${YELLOW}Iniciando despliegue...${NC}"
 
@@ -13,10 +13,25 @@ echo -e "${YELLOW}Configurando usuario de git...${NC}"
 git config user.name "Xappiens"
 git config user.email "xappiens@xappiens.com"
 
-# Guardar cambios locales si existen
+# Actualizar versión
+echo -e "${YELLOW}Actualizando versión...${NC}"
+VERSION_FILE="src/config/version.ts"
+if [ -f "$VERSION_FILE" ]; then
+    # Incrementar el número de build
+    sed -i "s/build: [0-9]*/build: $(date +%s)/" "$VERSION_FILE"
+    echo -e "${GREEN}Versión actualizada${NC}"
+else
+    echo -e "${RED}Error: Archivo de versión no encontrado${NC}"
+    exit 1
+fi
+
+# Guardar cambios locales
 echo -e "${YELLOW}Guardando cambios locales...${NC}"
 git add .
-git commit -m "Auto-deploy: $(date '+%Y-%m-%d %H:%M:%S')" || true
+git commit -m "Actualización automática: $(date +%Y-%m-%d_%H-%M-%S)" || {
+    echo -e "${RED}Error al guardar cambios locales${NC}"
+    exit 1
+}
 
 # Obtener cambios del repositorio remoto
 echo -e "${YELLOW}Obteniendo cambios del repositorio...${NC}"
@@ -48,7 +63,7 @@ npm run build || {
 
 # Reiniciar Nginx
 echo -e "${YELLOW}Reiniciando Nginx...${NC}"
-sudo systemctl reload nginx || {
+sudo systemctl restart nginx || {
     echo -e "${RED}Error al reiniciar Nginx${NC}"
     exit 1
 }
