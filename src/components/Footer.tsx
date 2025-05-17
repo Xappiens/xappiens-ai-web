@@ -32,31 +32,6 @@ const Footer = () => {
               </div>
               <p className="text-gray-400">Madrid, España</p>
             </div>
-            <div className="mt-4">
-              <h4 className="text-lg font-semibold mb-2">Redes Sociales</h4>
-              <div className="space-y-2">
-                <a 
-                  href="https://www.youtube.com/@abelramosc" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-400 hover:text-white transition flex items-center"
-                >
-                  <Youtube className="w-5 h-5 mr-2 text-red-500" />
-                  <span>Abel Ramos</span>
-                  <ExternalLink className="w-3 h-3 ml-1" />
-                </a>
-                <a 
-                  href="https://www.youtube.com/@HayunaIAparaeso" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-400 hover:text-white transition flex items-center"
-                >
-                  <Youtube className="w-5 h-5 mr-2 text-red-500" />
-                  <span>Hay una IA para eso</span>
-                  <ExternalLink className="w-3 h-3 ml-1" />
-                </a>
-              </div>
-            </div>
           </div>
           
           <div>
@@ -118,8 +93,41 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
+        {/* Sección de Redes Sociales */}
+        <div className="mt-12 mb-8">
+          <h4 className="text-xl font-semibold mb-6 text-center">Síguenos en YouTube</h4>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+            <a 
+              href="https://www.youtube.com/@abelramosc" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-3 bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-lg transition-colors"
+            >
+              <Youtube className="w-6 h-6 text-red-500" />
+              <div>
+                <span className="font-medium">Abel Ramos</span>
+                <p className="text-sm text-gray-400">Tecnología y Desarrollo</p>
+              </div>
+              <ExternalLink className="w-4 h-4 text-gray-400" />
+            </a>
+            <a 
+              href="https://www.youtube.com/@HayunaIAparaeso" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-3 bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-lg transition-colors"
+            >
+              <Youtube className="w-6 h-6 text-red-500" />
+              <div>
+                <span className="font-medium">Hay una IA para eso</span>
+                <p className="text-sm text-gray-400">Inteligencia Artificial</p>
+              </div>
+              <ExternalLink className="w-4 h-4 text-gray-400" />
+            </a>
+          </div>
+        </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Xappiens. Todos los derechos reservados.
           </div>
