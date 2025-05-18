@@ -247,6 +247,18 @@ const Contacto = () => {
                     <MessageCircle size={28} />
                     Contactar por WhatsApp
                   </a>
+                  <a
+                    href="https://t.me/XappiensBot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-6 rounded-lg text-center text-lg transition-colors flex items-center justify-center gap-3 mt-4"
+                    title="Contactar por Telegram"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9.036 15.956l-.396 4.012c.568 0 .814-.244 1.112-.537l2.664-2.537 5.522 4.029c1.012.557 1.736.264 1.99-.937l3.612-16.964c.329-1.527-.553-2.127-1.538-1.765l-21.1 8.122c-1.444.557-1.426 1.354-.25 1.715l5.396 1.687 12.522-7.89c.588-.382 1.125-.17.684.212z"/>
+                    </svg>
+                    Escríbenos por Telegram
+                  </a>
                 </div>
               </div>
             </div>
