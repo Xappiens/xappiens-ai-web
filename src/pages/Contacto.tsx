@@ -190,9 +190,6 @@ const Contacto = () => {
                       <h3 className="text-lg font-semibold mb-1">Teléfono</h3>
                       <div className="flex items-center space-x-2">
                         <p className="text-gray-600">+34 614 230 720</p>
-                        <a href="https://wa.me/34614230720" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:text-green-400 transition-colors" title="Contactar por WhatsApp">
-                          <MessageCircle size={20} />
-                        </a>
                       </div>
                     </div>
                   </div>
@@ -206,37 +203,19 @@ const Contacto = () => {
                       <p className="text-gray-600">Disponible de lunes a viernes, de 9:00 a 18:00</p>
                     </div>
                   </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-12 h-12 rounded-full bg-xappiens-purple/10 flex items-center justify-center text-xappiens-purple mr-4">
-                      <Info size={20} />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-1">Dirección</h3>
-                      <p className="text-gray-600">
-                        Calle Innovación, 123<br />
-                        28001 Madrid, España
-                      </p>
-                    </div>
-                  </div>
                 </div>
                 
                 <div className="mt-8">
-                  <h3 className="text-lg font-semibold mb-4">Horario de atención</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex justify-between">
-                      <span>Lunes - Viernes</span>
-                      <span>9:00 - 18:00</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span>Sábado</span>
-                      <span>Cerrado</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span>Domingo</span>
-                      <span>Cerrado</span>
-                    </li>
-                  </ul>
+                  <a
+                    href="https://wa.me/34614230720"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg text-center text-lg transition-colors flex items-center justify-center gap-3"
+                    title="Contactar por WhatsApp"
+                  >
+                    <MessageCircle size={28} />
+                    Contactar por WhatsApp
+                  </a>
                 </div>
               </div>
             </div>
