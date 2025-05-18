@@ -105,6 +105,7 @@ cd /var/www/xappienscom
 # Build del frontend (React)
 echo -e "${YELLOW}Construyendo el frontend...${NC}"
 cd /var/www/xappienscom/frontend
+export $(cat .env | xargs)
 npm run build
 cd /var/www/xappienscom
 

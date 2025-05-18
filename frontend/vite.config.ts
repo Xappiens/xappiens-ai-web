@@ -20,3 +20,5 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+
+console.log("VITE_RECAPTCHA_SITE_KEY in vite.config.ts:", process.env.VITE_RECAPTCHA_SITE_KEY);
