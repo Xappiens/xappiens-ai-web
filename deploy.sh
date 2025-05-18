@@ -13,14 +13,36 @@ echo -e "${YELLOW}Configurando usuario de git...${NC}"
 git config user.name "Xappiens"
 git config user.email "xappiens@xappiens.com"
 
-# Actualizar versión semántica (patch)
+# Actualizar versión semántica
 echo -e "${YELLOW}Actualizando versión...${NC}"
 VERSION_FILE="src/config/version.ts"
 if [ -f "$VERSION_FILE" ]; then
+    CURRENT_MAJOR=$(grep 'major:' "$VERSION_FILE" | head -1 | grep -o '[0-9]\+')
+    CURRENT_MINOR=$(grep 'minor:' "$VERSION_FILE" | head -1 | grep -o '[0-9]\+')
     CURRENT_PATCH=$(grep 'patch:' "$VERSION_FILE" | head -1 | grep -o '[0-9]\+')
+    
+    # Incrementar patch
     NEW_PATCH=$((CURRENT_PATCH + 1))
+    
+    # Si patch llega a 10, incrementar minor y resetear patch
+    if [ $NEW_PATCH -ge 10 ]; then
+        NEW_PATCH=0
+        NEW_MINOR=$((CURRENT_MINOR + 1))
+        
+        # Si minor llega a 10, incrementar major y resetear minor
+        if [ $NEW_MINOR -ge 10 ]; then
+            NEW_MINOR=0
+            NEW_MAJOR=$((CURRENT_MAJOR + 1))
+            sed -i "s/major: $CURRENT_MAJOR/major: $NEW_MAJOR/" "$VERSION_FILE"
+        else
+            sed -i "s/minor: $CURRENT_MINOR/minor: $NEW_MINOR/" "$VERSION_FILE"
+        fi
+    else
+        NEW_MINOR=$CURRENT_MINOR
+    fi
+    
     sed -i "s/patch: $CURRENT_PATCH/patch: $NEW_PATCH/" "$VERSION_FILE"
-    echo -e "${GREEN}Versión actualizada a patch $NEW_PATCH${NC}"
+    echo -e "${GREEN}Versión actualizada a v$CURRENT_MAJOR.$NEW_MINOR.$NEW_PATCH${NC}"
 else
     echo -e "${RED}Error: Archivo de versión no encontrado${NC}"
     exit 1
