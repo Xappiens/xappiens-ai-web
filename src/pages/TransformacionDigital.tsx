@@ -66,7 +66,7 @@ const TransformacionDigital = () => {
                 </div>
               </div>
               <div className="md:w-1/2">
-                <div className="aspect-video bg-gray-200 rounded-lg"></div>
+                <img src="/images/td-industrial.webp" alt="Transformación digital industrial" className="aspect-video bg-gray-200 rounded-lg object-cover w-full" />
               </div>
             </div>
           </div>
