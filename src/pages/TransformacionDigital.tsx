@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -94,18 +93,18 @@ const TransformacionDigital = () => {
                     1
                   </div>
                   <div className="md:w-1/2 pl-0 md:pl-12 text-left">
-                    <div className="aspect-video bg-white rounded-lg"></div>
+                    <img src="/images/td.jpg" alt="Diagnóstico digital" className="aspect-video bg-white rounded-lg object-cover w-full" />
                   </div>
                 </div>
                 
                 <div className="flex flex-col md:flex-row items-center">
                   <div className="md:w-1/2 pr-0 md:pr-12 mb-6 md:mb-0 text-right md:order-1">
-                    <div className="aspect-video bg-white rounded-lg"></div>
+                    <img src="/images/da.jpg" alt="Estrategia digital" className="aspect-video bg-white rounded-lg object-cover w-full" />
                   </div>
                   <div className="md:w-12 md:h-12 bg-xappiens-purple rounded-full flex items-center justify-center text-white font-bold text-xl z-10 mx-auto md:mx-0">
                     2
                   </div>
-                  <div className="md:w-1/2 pl-0 md:pl-12 text-left">
+                  <div className="md:w-1/2 pl-0 md:pl-12 text-left md:order-2">
                     <h3 className="text-2xl font-semibold mb-3">Estrategia digital</h3>
                     <p className="text-gray-600">
                       Desarrollamos una estrategia digital a medida, alineada con tus objetivos 
@@ -126,18 +125,18 @@ const TransformacionDigital = () => {
                     3
                   </div>
                   <div className="md:w-1/2 pl-0 md:pl-12 text-left">
-                    <div className="aspect-video bg-white rounded-lg"></div>
+                    <img src="/images/consultoria.jpg" alt="Implementación tecnológica" className="aspect-video bg-white rounded-lg object-cover w-full" />
                   </div>
                 </div>
                 
                 <div className="flex flex-col md:flex-row items-center">
                   <div className="md:w-1/2 pr-0 md:pr-12 mb-6 md:mb-0 text-right md:order-1">
-                    <div className="aspect-video bg-white rounded-lg"></div>
+                    <img src="/images/outsourcing.jpg" alt="Gestión del cambio" className="aspect-video bg-white rounded-lg object-cover w-full" />
                   </div>
                   <div className="md:w-12 md:h-12 bg-xappiens-purple rounded-full flex items-center justify-center text-white font-bold text-xl z-10 mx-auto md:mx-0">
                     4
                   </div>
-                  <div className="md:w-1/2 pl-0 md:pl-12 text-left">
+                  <div className="md:w-1/2 pl-0 md:pl-12 text-left md:order-2">
                     <h3 className="text-2xl font-semibold mb-3">Gestión del cambio</h3>
                     <p className="text-gray-600">
                       Acompañamos a tu equipo en la adopción de las nuevas tecnologías y 
@@ -158,7 +157,7 @@ const TransformacionDigital = () => {
                     5
                   </div>
                   <div className="md:w-1/2 pl-0 md:pl-12 text-left">
-                    <div className="aspect-video bg-white rounded-lg"></div>
+                    <img src="/images/formacion.jpg" alt="Medición y optimización" className="aspect-video bg-white rounded-lg object-cover w-full" />
                   </div>
                 </div>
               </div>
