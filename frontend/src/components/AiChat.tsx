@@ -155,6 +155,7 @@ const AiChat = () => {
                     ? 'bg-xappiens-purple text-white rounded-tr-none'
                     : 'bg-gray-100 text-gray-800 rounded-tl-none'
                 }`}
+                style={!msg.isUser ? { whiteSpace: 'pre-line' } : {}}
               >
                 {msg.id === loaderMessageId ? (
                   <span className="flex items-center gap-2">
