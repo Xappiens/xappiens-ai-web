@@ -11,9 +11,9 @@ app.use(express.json());
 
 const FRAPPE_API_URL = "https://xappiens.frappe.cloud/api/resource/Lead";
 
-app.post('/contact', async (req, res) => {
+app.post('/api/contact', async (req, res) => {
   const { name, email, phone, company, interest, message, recaptchaToken } = req.body;
-  console.log('--- Nueva petición /contact ---');
+  console.log('--- Nueva petición /api/contact ---');
   console.log('Datos recibidos:', { name, email, phone, company, interest, message });
 
   // 1. Validar reCAPTCHA
