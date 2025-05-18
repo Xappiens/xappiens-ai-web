@@ -40,17 +40,31 @@ const ContactForm = () => {
       toast.error('Por favor, verifica el captcha.');
       return;
     }
-    // Aquí puedes enviar el token junto con el formulario al backend
-    console.log('Form submitted:', { ...formData, recaptchaToken: token });
-    toast.success('Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      interest: '',
-      message: ''
-    });
+
+    // Enviar los datos al backend
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, recaptchaToken: token }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        toast.success('Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          interest: '',
+          message: ''
+        });
+      } else {
+        toast.error(data.error || 'Error al enviar el mensaje.');
+      }
+    } catch (err) {
+      toast.error('Error de red al enviar el mensaje.');
+    }
   };
 
   return (

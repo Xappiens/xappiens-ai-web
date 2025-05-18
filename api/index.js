@@ -13,6 +13,8 @@ const FRAPPE_API_URL = "https://xappiens.frappe.cloud/api/resource/Lead";
 
 app.post('/contact', async (req, res) => {
   const { name, email, phone, company, interest, message, recaptchaToken } = req.body;
+  console.log('--- Nueva petición /contact ---');
+  console.log('Datos recibidos:', { name, email, phone, company, interest, message });
 
   // 1. Validar reCAPTCHA
   try {
@@ -26,10 +28,13 @@ app.post('/contact', async (req, res) => {
         },
       }
     );
+    console.log('Respuesta reCAPTCHA:', recaptchaRes.data);
     if (!recaptchaRes.data.success || recaptchaRes.data.score < 0.5) {
+      console.log('Fallo en la verificación de reCAPTCHA.');
       return res.status(400).json({ error: 'Fallo en la verificación de reCAPTCHA.' });
     }
   } catch (err) {
+    console.log('Error al verificar reCAPTCHA:', err.response?.data || err.message);
     return res.status(500).json({ error: 'Error al verificar reCAPTCHA.' });
   }
 
@@ -54,8 +59,10 @@ app.post('/contact', async (req, res) => {
         },
       }
     );
+    console.log('Respuesta de Frappe:', frappeRes.data);
     return res.json({ success: true, frappe: frappeRes.data });
   } catch (err) {
+    console.log('Error al crear el Lead en Frappe:', err.response?.data || err.message);
     return res.status(500).json({ error: 'Error al crear el Lead en Frappe.', details: err.response?.data || err.message });
   }
 });
