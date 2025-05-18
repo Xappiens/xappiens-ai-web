@@ -141,7 +141,13 @@ const InteligenciaArtificial = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                <div className="h-48 bg-gray-200"></div>
+                <div className="h-48">
+                  <img 
+                    src="/images/caso_exito_1.webp" 
+                    alt="Sistema de recomendación para e-commerce" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
                     Sistema de recomendación para e-commerce
@@ -157,7 +163,13 @@ const InteligenciaArtificial = () => {
               </div>
               
               <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                <div className="h-48 bg-gray-200"></div>
+                <div className="h-48">
+                  <img 
+                    src="/images/caso_exito_2.webp" 
+                    alt="Chatbot de atención al cliente 24/7" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
                     Chatbot de atención al cliente 24/7
