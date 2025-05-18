@@ -15,7 +15,7 @@ git config user.email "xappiens@xappiens.com"
 
 # Actualizar versión semántica
 echo -e "${YELLOW}Actualizando versión...${NC}"
-VERSION_FILE="src/config/version.ts"
+VERSION_FILE="frontend/src/config/version.ts"
 if [ -f "$VERSION_FILE" ]; then
     CURRENT_MAJOR=$(grep 'major:' "$VERSION_FILE" | head -1 | grep -o '[0-9]\+')
     CURRENT_MINOR=$(grep 'minor:' "$VERSION_FILE" | head -1 | grep -o '[0-9]\+')
@@ -72,7 +72,7 @@ echo -e "${YELLOW}Subiendo cambios al repositorio...${NC}"
 
 # Instalar dependencias
 echo -e "${YELLOW}Instalando dependencias...${NC}"
-npm install || {
+cd frontend && npm install || {
     echo -e "${RED}Error al instalar dependencias${NC}"
     exit 1
 }
@@ -83,6 +83,7 @@ npm run build || {
     echo -e "${RED}Error al construir la aplicación${NC}"
     exit 1
 }
+cd ..
 
 # Reiniciar Nginx
 echo -e "${YELLOW}Reiniciando Nginx...${NC}"
