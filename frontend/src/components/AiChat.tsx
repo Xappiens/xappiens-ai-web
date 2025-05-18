@@ -4,6 +4,7 @@ import { Input } from './ui/input';
 import { ScrollArea } from './ui/scroll-area';
 import { Card, CardContent } from './ui/card';
 import { Mail, MessageSquare, Info, Book } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 interface Message {
   id: number;
@@ -163,7 +164,11 @@ const AiChat = () => {
                     <span className="text-xs text-gray-500">Pensando...</span>
                   </span>
                 ) : (
-                  msg.text
+                  msg.isUser ? (
+                    msg.text
+                  ) : (
+                    <ReactMarkdown>{msg.text}</ReactMarkdown>
+                  )
                 )}
               </div>
             </div>
