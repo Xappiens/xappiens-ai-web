@@ -153,7 +153,6 @@ const ContactForm = () => {
 };
 
 const Contacto = () => {
-  console.log("RECAPTCHA KEY (import.meta.env):", import.meta.env.VITE_RECAPTCHA_SITE_KEY);
   return (
     <GoogleReCaptchaProvider reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || ''} language="es">
       <Navbar />
