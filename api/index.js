@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-const FRAPPE_API_URL = "https://xappiens.frappe.cloud/api/resource/Lead";
+const FRAPPE_API_URL = "https://xappiens.frappe.cloud/api/resource/CRM%20Lead";
 
 app.post('/api/contact', async (req, res) => {
   const { name, email, phone, company, interest, message, recaptchaToken } = req.body;
