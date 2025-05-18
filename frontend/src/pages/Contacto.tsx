@@ -153,9 +153,9 @@ const ContactForm = () => {
 };
 
 const Contacto = () => {
-  console.log("RECAPTCHA KEY:", process.env.REACT_APP_RECAPTCHA_SITE_KEY);
+  console.log("RECAPTCHA KEY:", process.env.VITE_RECAPTCHA_SITE_KEY);
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={process.env.REACT_APP_RECAPTCHA_SITE_KEY || ''} language="es">
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.VITE_RECAPTCHA_SITE_KEY || ''} language="es">
       <Navbar />
       <div className="pt-20"> {/* Adding padding for the fixed navbar */}
         {/* Hero Section */}
