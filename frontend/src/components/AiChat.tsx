@@ -32,12 +32,12 @@ const AiChat = () => {
     isUser: false
   }]);
   const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
       const scrollArea = scrollAreaRef.current;
-      // Aseguramos que el scroll se haga dentro del área de conversación
       const scrollContainer = scrollArea.querySelector('[data-radix-scroll-area-viewport]');
       if (scrollContainer) {
         scrollContainer.scrollTop = scrollContainer.scrollHeight;
@@ -46,53 +46,49 @@ const AiChat = () => {
   };
 
   useEffect(() => {
-    // Hacemos scroll al final cuando se añaden nuevos mensajes
     scrollToBottom();
   }, [messages]);
 
-  const handleSend = (e?: React.FormEvent) => {
-    if (e) {
-      e.preventDefault();
-    }
-    
-    if (input.trim() === '') return;
-    
+  const handleSend = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (input.trim() === '' || loading) return;
+
     // Add user message
     const userMessage: Message = {
       id: messages.length + 1,
       text: input,
       isUser: true
     };
-    
     setMessages(prev => [...prev, userMessage]);
     setInput('');
-    
-    // Simulate AI processing
-    setTimeout(() => {
-      let responseText = "Gracias por tu mensaje. Uno de nuestros expertos se pondrá en contacto contigo pronto para ayudarte con tu consulta específica.";
-      
-      // Simple keyword matching
-      const lowerInput = input.toLowerCase();
-      if (lowerInput.includes('servicio') || lowerInput.includes('ofrece')) {
-        responseText = predefinedResponses.servicios;
-      } else if (lowerInput.includes('contacto') || lowerInput.includes('email') || lowerInput.includes('teléfono')) {
-        responseText = predefinedResponses.contacto;
-      } else if (lowerInput.includes('inteligencia artificial') || lowerInput.includes('ia') || lowerInput.includes('ai')) {
-        responseText = predefinedResponses.ia;
-      } else if (lowerInput.includes('formacion') || lowerInput.includes('curso') || lowerInput.includes('capacitación')) {
-        responseText = predefinedResponses.formacion;
-      } else if (lowerInput.includes('transformacion') || lowerInput.includes('digital')) {
-        responseText = predefinedResponses.transformacion;
-      }
-      
-      const aiResponse: Message = {
-        id: messages.length + 2,
-        text: responseText,
-        isUser: false
-      };
-      
-      setMessages(prev => [...prev, aiResponse]);
-    }, 800);
+    setLoading(true);
+
+    // Prepara el historial para el backend
+    const history = [...messages, userMessage].map(m => ({
+      role: m.isUser ? 'user' : 'assistant',
+      content: m.text
+    }));
+
+    try {
+      const response = await fetch('/api/ai-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history })
+      });
+      const data = await response.json();
+      const aiText = data.aiMessage || 'Lo siento, no pude generar una respuesta.';
+      setMessages(prev => [
+        ...prev,
+        { id: prev.length + 1, text: aiText, isUser: false }
+      ]);
+    } catch (err) {
+      setMessages(prev => [
+        ...prev,
+        { id: prev.length + 1, text: 'Error al conectar con la IA. Inténtalo de nuevo más tarde.', isUser: false }
+      ]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handlePredefinedButtonClick = (e: React.MouseEvent) => {
@@ -202,9 +198,10 @@ const AiChat = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className="flex-1"
+            disabled={loading}
           />
-          <Button type="submit" className="bg-xappiens-purple hover:bg-xappiens-blue">
-            Enviar
+          <Button type="submit" className="bg-xappiens-purple hover:bg-xappiens-blue" disabled={loading}>
+            {loading ? 'Pensando...' : 'Enviar'}
           </Button>
         </form>
       </CardContent>
