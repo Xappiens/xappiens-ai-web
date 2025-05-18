@@ -102,6 +102,12 @@ pm2 reload xappiens-api || pm2 start index.js --name xappiens-api
 
 cd /var/www/xappienscom
 
+# Build del frontend (React)
+echo -e "${YELLOW}Construyendo el frontend...${NC}"
+cd /var/www/xappienscom/frontend
+npm run build
+cd /var/www/xappienscom
+
 echo -e "${GREEN}¡Despliegue completado con éxito!${NC}"
 echo -e "${GREEN}La aplicación está actualizada y funcionando en:${NC}"
 echo -e "${GREEN}https://xappiens.com${NC}"
