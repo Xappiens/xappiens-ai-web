@@ -49,7 +49,7 @@ app.post('/api/contact', async (req, res) => {
         mobile_no: phone,
         organization: company,
         custom_message: message,
-        source: "xappiens.com/escribenos",
+        source: "Formulario Web",
         lead_owner: "abel@xappiens.com"
       },
       {
