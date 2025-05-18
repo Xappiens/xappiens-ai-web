@@ -143,7 +143,7 @@ const InteligenciaArtificial = () => {
               <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
                 <div className="h-48">
                   <img 
-                    src="/images/caso_exito_1.webp" 
+                    src="/images/recomendacion.jpg" 
                     alt="Sistema de recomendación para e-commerce" 
                     className="w-full h-full object-cover"
                   />
@@ -165,7 +165,7 @@ const InteligenciaArtificial = () => {
               <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
                 <div className="h-48">
                   <img 
-                    src="/images/caso_exito_2.webp" 
+                    src="/images/chatbots.jpg" 
                     alt="Chatbot de atención al cliente 24/7" 
                     className="w-full h-full object-cover"
                   />
