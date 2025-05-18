@@ -98,13 +98,13 @@ const TransformacionDigital = () => {
                 </div>
                 
                 <div className="flex flex-col md:flex-row items-center">
-                  <div className="md:w-1/2 pr-0 md:pr-12 mb-6 md:mb-0 text-right md:order-1">
+                  <div className="md:w-1/2 pr-0 md:pr-12 mb-6 md:mb-0 text-right order-1 md:order-1">
                     <img src="/images/da.jpg" alt="Estrategia digital" className="aspect-video bg-white rounded-lg object-cover w-full" />
                   </div>
-                  <div className="md:w-12 md:h-12 bg-xappiens-purple rounded-full flex items-center justify-center text-white font-bold text-xl z-10 mx-auto md:mx-0">
+                  <div className="md:w-12 md:h-12 bg-xappiens-purple rounded-full flex items-center justify-center text-white font-bold text-xl z-10 mx-auto md:mx-0 order-2 md:order-2">
                     2
                   </div>
-                  <div className="md:w-1/2 pl-0 md:pl-12 text-left md:order-2">
+                  <div className="md:w-1/2 pl-0 md:pl-12 text-left order-3 md:order-3">
                     <h3 className="text-2xl font-semibold mb-3">Estrategia digital</h3>
                     <p className="text-gray-600">
                       Desarrollamos una estrategia digital a medida, alineada con tus objetivos 
@@ -130,13 +130,13 @@ const TransformacionDigital = () => {
                 </div>
                 
                 <div className="flex flex-col md:flex-row items-center">
-                  <div className="md:w-1/2 pr-0 md:pr-12 mb-6 md:mb-0 text-right md:order-1">
+                  <div className="md:w-1/2 pr-0 md:pr-12 mb-6 md:mb-0 text-right order-1 md:order-1">
                     <img src="/images/outsourcing.jpg" alt="Gestión del cambio" className="aspect-video bg-white rounded-lg object-cover w-full" />
                   </div>
-                  <div className="md:w-12 md:h-12 bg-xappiens-purple rounded-full flex items-center justify-center text-white font-bold text-xl z-10 mx-auto md:mx-0">
+                  <div className="md:w-12 md:h-12 bg-xappiens-purple rounded-full flex items-center justify-center text-white font-bold text-xl z-10 mx-auto md:mx-0 order-2 md:order-2">
                     4
                   </div>
-                  <div className="md:w-1/2 pl-0 md:pl-12 text-left md:order-2">
+                  <div className="md:w-1/2 pl-0 md:pl-12 text-left order-3 md:order-3">
                     <h3 className="text-2xl font-semibold mb-3">Gestión del cambio</h3>
                     <p className="text-gray-600">
                       Acompañamos a tu equipo en la adopción de las nuevas tecnologías y 
