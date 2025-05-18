@@ -153,6 +153,7 @@ const ContactForm = () => {
 };
 
 const Contacto = () => {
+  console.log("RECAPTCHA KEY:", process.env.REACT_APP_RECAPTCHA_SITE_KEY);
   return (
     <GoogleReCaptchaProvider reCaptchaKey={process.env.REACT_APP_RECAPTCHA_SITE_KEY || ''} language="es">
       <Navbar />
