@@ -25,6 +25,8 @@ const predefinedResponses = {
   transformacion: "La Transformación Digital es un proceso estratégico que integra tecnologías digitales en todas las áreas de negocio. En Xappiens te acompañamos en este viaje: analizamos tu situación actual, diseñamos una estrategia a medida, implementamos soluciones y te ayudamos con la gestión del cambio.",
 };
 
+const loaderMessageId = -1; // ID especial para el mensaje de loader
+
 const AiChat = () => {
   const [messages, setMessages] = useState<Message[]>([{
     id: 1,
@@ -63,6 +65,12 @@ const AiChat = () => {
     setInput('');
     setLoading(true);
 
+    // Añadir mensaje de loader IA
+    setMessages(prev => [
+      ...prev,
+      { id: loaderMessageId, text: '', isUser: false }
+    ]);
+
     // Prepara el historial para el backend
     const history = [...messages, userMessage].map(m => ({
       role: m.isUser ? 'user' : 'assistant',
@@ -78,12 +86,12 @@ const AiChat = () => {
       const data = await response.json();
       const aiText = data.aiMessage || 'Lo siento, no pude generar una respuesta.';
       setMessages(prev => [
-        ...prev,
+        ...prev.filter(m => m.id !== loaderMessageId),
         { id: prev.length + 1, text: aiText, isUser: false }
       ]);
     } catch (err) {
       setMessages(prev => [
-        ...prev,
+        ...prev.filter(m => m.id !== loaderMessageId),
         { id: prev.length + 1, text: 'Error al conectar con la IA. Inténtalo de nuevo más tarde.', isUser: false }
       ]);
     } finally {
@@ -118,6 +126,23 @@ const AiChat = () => {
       </div>
       
       <ScrollArea ref={scrollAreaRef} className="h-[350px] p-4">
+        <style>{`
+          .dot-flashing {
+            position: relative;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            background-color: #7c3aed;
+            color: #7c3aed;
+            animation: dotFlashing 1s infinite linear alternate;
+            display: inline-block;
+          }
+          @keyframes dotFlashing {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+          }
+        `}</style>
         <div className="space-y-4">
           {messages.map((msg) => (
             <div
@@ -131,7 +156,14 @@ const AiChat = () => {
                     : 'bg-gray-100 text-gray-800 rounded-tl-none'
                 }`}
               >
-                {msg.text}
+                {msg.id === loaderMessageId ? (
+                  <span className="flex items-center gap-2">
+                    <span className="dot-flashing"></span>
+                    <span className="text-xs text-gray-500">Pensando...</span>
+                  </span>
+                ) : (
+                  msg.text
+                )}
               </div>
             </div>
           ))}
