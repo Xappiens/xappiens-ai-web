@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -189,7 +188,12 @@ const Contacto = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold mb-1">Teléfono</h3>
-                      <p className="text-gray-600">+34 900 123 456</p>
+                      <div className="flex items-center space-x-2">
+                        <p className="text-gray-600">+34 614 230 720</p>
+                        <a href="https://wa.me/34614230720" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:text-green-400 transition-colors" title="Contactar por WhatsApp">
+                          <MessageCircle size={20} />
+                        </a>
+                      </div>
                     </div>
                   </div>
                   
@@ -234,25 +238,6 @@ const Contacto = () => {
                     </li>
                   </ul>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Map Section */}
-        <section className="bg-gray-50 py-16">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">Encuéntranos</h2>
-              <p className="text-lg text-gray-600">
-                Visita nuestras oficinas centrales en Madrid
-              </p>
-            </div>
-            
-            <div className="h-80 bg-gray-300 rounded-lg">
-              {/* Here would go a Google Map or similar */}
-              <div className="h-full flex items-center justify-center">
-                <p className="text-gray-500">Mapa interactivo</p>
               </div>
             </div>
           </div>
