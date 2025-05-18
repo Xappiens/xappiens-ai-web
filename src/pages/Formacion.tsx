@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -85,7 +84,7 @@ const Formacion = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card className="overflow-hidden">
-                <div className="h-48 bg-xappiens-blue"></div>
+                <img src="/images/cloud-computing.jpg" alt="Inteligencia Artificial y Machine Learning" className="h-48 w-full object-cover" />
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Inteligencia Artificial y Machine Learning</h3>
                   <p className="text-gray-600 mb-4">
@@ -113,7 +112,7 @@ const Formacion = () => {
               </Card>
               
               <Card className="overflow-hidden">
-                <div className="h-48 bg-xappiens-purple"></div>
+                <img src="/images/full-stack.jpg" alt="Desarrollo Web Fullstack" className="h-48 w-full object-cover" />
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Desarrollo Web Fullstack</h3>
                   <p className="text-gray-600 mb-4">
@@ -141,7 +140,7 @@ const Formacion = () => {
               </Card>
               
               <Card className="overflow-hidden">
-                <div className="h-48 bg-xappiens-sky"></div>
+                <img src="/images/otra-imagen.jpg" alt="Cloud Computing y DevOps" className="h-48 w-full object-cover" />
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cloud Computing y DevOps</h3>
                   <p className="text-gray-600 mb-4">
@@ -169,7 +168,7 @@ const Formacion = () => {
               </Card>
               
               <Card className="overflow-hidden">
-                <div className="h-48 bg-xappiens-blue/70"></div>
+                <img src="/images/agile.jpg" alt="Gestión Ágil de Proyectos" className="h-48 w-full object-cover" />
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Gestión Ágil de Proyectos</h3>
                   <p className="text-gray-600 mb-4">
