@@ -48,9 +48,7 @@ app.post('/api/contact', async (req, res) => {
         email,
         mobile_no: phone,
         organization: company,
-        custom_message: message,
-        source: "Formulario Web",
-        lead_owner: "abel@xappiens.com"
+        custom_message: message
       },
       {
         headers: {
