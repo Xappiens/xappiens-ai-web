@@ -42,24 +42,25 @@ const ERPNext = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{animationDelay: '0.4s'}}>
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-4 text-lg group">
-                Solicitar Demo 
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-4 text-lg group"
+                onClick={() => window.open('https://frappecloud.com/dashboard/signup?referrer=f23e580a', '_blank')}
+              >
+                Empieza ya 
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg">
-                Ver Características
               </Button>
             </div>
           </div>
         </div>
         
-        {/* Hero Image */}
+        {/* Hero Image with hover effect */}
         <div className="container mx-auto px-4 mt-16 animate-fade-in" style={{animationDelay: '0.6s'}}>
           <div className="max-w-5xl mx-auto">
             <img 
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop"
               alt="ERPNext Dashboard"
-              className="w-full rounded-2xl shadow-2xl animate-tilt border border-white/20"
+              className="w-full rounded-2xl shadow-2xl animate-tilt border border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-3xl hover:border-white/40 cursor-pointer"
             />
           </div>
         </div>
@@ -300,8 +301,12 @@ const ERPNext = () => {
               Solicite una demo personalizada sin compromiso.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{animationDelay: '0.4s'}}>
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg group shadow-lg">
-                Solicitar Demo 
+              <Button 
+                size="lg" 
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg group shadow-lg"
+                onClick={() => window.open('https://frappecloud.com/dashboard/signup?referrer=f23e580a', '_blank')}
+              >
+                Empieza ya 
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg">
