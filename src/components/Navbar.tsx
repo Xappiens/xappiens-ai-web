@@ -1,5 +1,4 @@
 
-
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -25,6 +24,12 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
+            <Link to="/transformacion-digital" className="hover:text-primary">
+              Transformación Digital
+            </Link>
+            <Link to="/inteligencia-artificial" className="hover:text-primary">
+              Inteligencia Artificial
+            </Link>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -66,9 +71,6 @@ const Navbar = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <Link to="/transformacion-digital" className="hover:text-primary">
-              Transformación Digital
-            </Link>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -114,9 +116,6 @@ const Navbar = () => {
             <Link to="/frappe/erpnext" className="hover:text-primary">
               ERPNext
             </Link>
-            <Link to="/inteligencia-artificial" className="hover:text-primary">
-              Inteligencia Artificial
-            </Link>
             <Button asChild className="ml-2">
               <Link to="/contacto">Contacto</Link>
             </Button>
@@ -158,6 +157,20 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-4">
             <div className="flex flex-col space-y-4">
+              <Link
+                to="/transformacion-digital"
+                className="hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Transformación Digital
+              </Link>
+              <Link
+                to="/inteligencia-artificial"
+                className="hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Inteligencia Artificial
+              </Link>
               <div className="space-y-2">
                 <div className="font-medium">Servicios</div>
                 <div className="pl-4 space-y-2">
@@ -177,13 +190,6 @@ const Navbar = () => {
                   </Link>
                 </div>
               </div>
-              <Link
-                to="/transformacion-digital"
-                className="hover:text-primary"
-                onClick={() => setIsOpen(false)}
-              >
-                Transformación Digital
-              </Link>
               <div className="space-y-2">
                 <div className="font-medium">Frappe</div>
                 <div className="pl-4 space-y-2">
@@ -210,13 +216,6 @@ const Navbar = () => {
               >
                 ERPNext
               </Link>
-              <Link
-                to="/inteligencia-artificial"
-                className="hover:text-primary"
-                onClick={() => setIsOpen(false)}
-              >
-                Inteligencia Artificial
-              </Link>
               <Button asChild className="w-full">
                 <Link to="/contacto" onClick={() => setIsOpen(false)}>
                   Contacto
@@ -240,4 +239,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
