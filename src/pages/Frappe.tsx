@@ -479,24 +479,6 @@ const Frappe = () => {
                 </CardContent>
               </Card>
             </div>
-
-            {/* Final CTA */}
-            <div className="text-center">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-xl px-12 py-6 shadow-2xl hover:shadow-3xl transition-all duration-300"
-                asChild
-              >
-                <a href="https://frappecloud.com/dashboard/signup?referrer=f23e580a" target="_blank" rel="noopener noreferrer">
-                  <Rocket className="mr-3 h-6 w-6" />
-                  Empezar Gratis Ahora
-                  <ArrowRight className="ml-3 h-6 w-6" />
-                </a>
-              </Button>
-              <p className="text-sm text-muted-foreground mt-4">
-                Sin tarjeta de crédito requerida • Configuración en 2 minutos
-              </p>
-            </div>
           </div>
         </div>
       </section>
