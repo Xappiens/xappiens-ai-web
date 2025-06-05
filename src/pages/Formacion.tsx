@@ -10,7 +10,7 @@ const Formacion = () => {
   return (
     <>
       <Navbar />
-      <div className="pt-20"> {/* Adding padding for the fixed navbar */}
+      <div className="pt-16"> {/* Reduced padding for the fixed navbar */}
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 text-white py-24 overflow-hidden">
           {/* Animated background elements */}
