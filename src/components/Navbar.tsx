@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -36,20 +37,6 @@ const Navbar = () => {
                     <div className="grid w-[400px] gap-3 p-4">
                       <NavigationMenuLink asChild>
                         <Link
-                          to="/transformacion-digital"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">
-                            Transformación Digital
-                          </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Soluciones tecnológicas para la transformación de tu
-                            negocio
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link
                           to="/formacion"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         >
@@ -79,6 +66,9 @@ const Navbar = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+            <Link to="/transformacion-digital" className="hover:text-primary">
+              Transformación Digital
+            </Link>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -89,19 +79,6 @@ const Navbar = () => {
                   </Link>
                   <NavigationMenuContent>
                     <div className="grid w-[400px] gap-3 p-4">
-                      <NavigationMenuLink asChild>
-                        <Link
-                          to="/frappe/erpnext"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">
-                            ERPNext
-                          </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Sistema ERP completo y de código abierto
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
                       <NavigationMenuLink asChild>
                         <Link
                           to="/frappe/crm"
@@ -134,6 +111,9 @@ const Navbar = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+            <Link to="/frappe/erpnext" className="hover:text-primary">
+              ERPNext
+            </Link>
             <Link to="/inteligencia-artificial" className="hover:text-primary">
               Inteligencia Artificial
             </Link>
@@ -182,13 +162,6 @@ const Navbar = () => {
                 <div className="font-medium">Servicios</div>
                 <div className="pl-4 space-y-2">
                   <Link
-                    to="/transformacion-digital"
-                    className="block hover:text-primary"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Transformación Digital
-                  </Link>
-                  <Link
                     to="/formacion"
                     className="block hover:text-primary"
                     onClick={() => setIsOpen(false)}
@@ -204,16 +177,16 @@ const Navbar = () => {
                   </Link>
                 </div>
               </div>
+              <Link
+                to="/transformacion-digital"
+                className="hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Transformación Digital
+              </Link>
               <div className="space-y-2">
                 <div className="font-medium">Frappe</div>
                 <div className="pl-4 space-y-2">
-                  <Link
-                    to="/frappe/erpnext"
-                    className="block hover:text-primary"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    ERPNext
-                  </Link>
                   <Link
                     to="/frappe/crm"
                     className="block hover:text-primary"
@@ -230,6 +203,13 @@ const Navbar = () => {
                   </Link>
                 </div>
               </div>
+              <Link
+                to="/frappe/erpnext"
+                className="hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                ERPNext
+              </Link>
               <Link
                 to="/inteligencia-artificial"
                 className="hover:text-primary"
@@ -260,3 +240,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
