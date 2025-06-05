@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -14,7 +15,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-background border-b">
+    <nav className="bg-background border-b relative z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="text-xl font-bold">
@@ -23,9 +24,6 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="hover:text-primary">
-              Inicio
-            </Link>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -180,13 +178,6 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-4">
             <div className="flex flex-col space-y-4">
-              <Link
-                to="/"
-                className="hover:text-primary"
-                onClick={() => setIsOpen(false)}
-              >
-                Inicio
-              </Link>
               <div className="space-y-2">
                 <div className="font-medium">Servicios</div>
                 <div className="pl-4 space-y-2">
