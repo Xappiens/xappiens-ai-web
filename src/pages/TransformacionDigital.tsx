@@ -12,7 +12,7 @@ const TransformacionDigital = () => {
       <Navbar />
       <div> {/* Removed padding for seamless navbar integration */}
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-900 via-cyan-800 to-teal-900 text-white py-24 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-blue-900 via-cyan-800 to-teal-900 text-white overflow-hidden">
           {/* Animated background elements */}
           <div className="absolute inset-0">
             <div className="absolute top-20 right-10 w-24 h-24 bg-cyan-400/20 rounded-full animate-float"></div>
@@ -21,7 +21,7 @@ const TransformacionDigital = () => {
             <div className="absolute top-1/3 left-1/4 w-8 h-8 bg-cyan-400/20 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
           </div>
           
-          <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="container mx-auto px-4 md:px-6 relative z-10 pt-24">
             <div className="max-w-5xl mx-auto text-center">
               <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6 animate-fade-in">
                 <Globe className="h-4 w-4 text-cyan-400 mr-2" />
@@ -59,12 +59,12 @@ const TransformacionDigital = () => {
           </div>
           
           {/* Hero Image with dynamic hover effect */}
-          <div className="container mx-auto px-4 mt-16 animate-fade-in" style={{animationDelay: '0.6s'}}>
+          <div className="container mx-auto px-4 mt-16 pb-24 animate-fade-in" style={{animationDelay: '0.6s'}}>
             <div className="max-w-5xl mx-auto">
               <div className="relative group">
                 <img 
-                  src="/images/td-industrial.webp" 
-                  alt="Transformación digital industrial" 
+                  src="/images/cloud-computing.jpg" 
+                  alt="Transformación digital y cloud computing" 
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl border border-white/20 transition-all duration-700 ease-out group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-[0_50px_100px_rgba(34,211,238,0.3)] cursor-pointer relative z-10"
                 />
                 {/* Glow effect */}
