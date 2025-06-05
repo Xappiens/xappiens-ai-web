@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -6,7 +7,7 @@ import { Link } from 'react-router-dom';
 interface ServiceCardProps {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   link: string;
   image?: string;
 }
@@ -25,9 +26,11 @@ const ServiceCard = ({ title, description, icon, link, image }: ServiceCardProps
         </div>
       )}
       <CardHeader className="flex justify-center items-center pb-2">
-        <div className="w-16 h-16 rounded-full bg-xappiens-purple/10 flex items-center justify-center text-xappiens-purple mb-4">
-          {icon}
-        </div>
+        {icon && (
+          <div className="w-16 h-16 rounded-full bg-xappiens-purple/10 flex items-center justify-center text-xappiens-purple mb-4">
+            {icon}
+          </div>
+        )}
         <CardTitle className="text-xl text-center">{title}</CardTitle>
       </CardHeader>
       <CardContent>
