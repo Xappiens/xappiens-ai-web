@@ -1,46 +1,46 @@
+
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
 import { Link } from 'react-router-dom';
-import { GraduationCap, BookOpen, Target } from 'lucide-react';
+import { GraduationCap, BookOpen, TrendingUp } from 'lucide-react';
 
 const Formacion = () => {
   return (
     <>
       <Navbar />
-      <div className="pt-16"> {/* Reduced padding for the fixed navbar */}
+      <div> {/* Removed padding for seamless navbar integration */}
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 text-white py-24 overflow-hidden">
           {/* Animated background elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-12 right-12 w-18 h-18 bg-emerald-400/20 rounded-full animate-float"></div>
-            <div className="absolute top-44 left-16 w-14 h-14 bg-teal-400/20 rounded-full animate-float" style={{animationDelay: '1.4s'}}></div>
-            <div className="absolute bottom-28 right-1/4 w-10 h-10 bg-cyan-400/20 rounded-full animate-float" style={{animationDelay: '0.9s'}}></div>
-            <div className="absolute top-1/2 left-1/3 w-6 h-6 bg-emerald-400/20 rounded-full animate-float" style={{animationDelay: '2.3s'}}></div>
+            <div className="absolute top-20 right-10 w-24 h-24 bg-emerald-400/20 rounded-full animate-float"></div>
+            <div className="absolute top-40 left-20 w-16 h-16 bg-teal-400/20 rounded-full animate-float" style={{animationDelay: '1.5s'}}></div>
+            <div className="absolute bottom-32 right-1/3 w-12 h-12 bg-cyan-400/20 rounded-full animate-float" style={{animationDelay: '0.8s'}}></div>
+            <div className="absolute top-1/3 left-1/4 w-8 h-8 bg-emerald-400/20 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
           </div>
           
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="max-w-5xl mx-auto text-center">
               <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6 animate-fade-in">
                 <GraduationCap className="h-4 w-4 text-emerald-400 mr-2" />
-                <span className="text-white text-sm font-medium">Desarrollo Profesional Avanzado</span>
+                <span className="text-white text-sm font-medium">Educación Tecnológica Avanzada</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fade-in">
                 <span className="bg-gradient-to-r from-white via-emerald-100 to-teal-100 bg-clip-text text-transparent">
-                  Formación Especializada
+                  Formación
                 </span>
                 <br />
                 <span className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-200 to-teal-200 bg-clip-text text-transparent">
-                  que Transforma Carreras
+                  Especializada
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl mb-10 text-emerald-100 leading-relaxed animate-fade-in max-w-4xl mx-auto" style={{animationDelay: '0.2s'}}>
-                Potenciamos el talento de tu equipo con programas formativos de vanguardia 
-                en tecnología, innovación y transformación digital.
+                Desarrolla las competencias del futuro con nuestros programas 
+                de formación especializados en tecnología y transformación digital.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{animationDelay: '0.4s'}}>
@@ -50,8 +50,8 @@ const Formacion = () => {
                     className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white border-0 px-8 py-4 text-lg group"
                   >
                     <BookOpen className="mr-2 h-5 w-5" />
-                    Eleva tu potencial
-                    <Target className="ml-2 h-5 w-5 group-hover:animate-pulse" />
+                    Explora cursos
+                    <TrendingUp className="ml-2 h-5 w-5 group-hover:animate-pulse" />
                   </Button>
                 </Link>
               </div>

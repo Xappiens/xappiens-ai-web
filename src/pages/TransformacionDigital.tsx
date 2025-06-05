@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -9,7 +10,7 @@ const TransformacionDigital = () => {
   return (
     <>
       <Navbar />
-      <div className="pt-16"> {/* Reduced padding for the fixed navbar */}
+      <div> {/* Removed padding for seamless navbar integration */}
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-blue-900 via-cyan-800 to-teal-900 text-white py-24 overflow-hidden">
           {/* Animated background elements */}
