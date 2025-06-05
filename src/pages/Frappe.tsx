@@ -1,4 +1,3 @@
-
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
@@ -55,13 +54,6 @@ const Frappe = () => {
       link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
     },
     {
-      title: "Frappe Chat",
-      description: "Sistema de mensajería y comunicación empresarial integrado. Facilita la colaboración en equipo con chat en tiempo real y notificaciones.",
-      icon: <MessageSquare className="h-8 w-8" />,
-      image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=600&h=300",
-      link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
-    },
-    {
       title: "Frappe LMS",
       description: "Sistema de gestión de aprendizaje para crear y gestionar cursos online. Incluye seguimiento de progreso, evaluaciones y certificaciones.",
       icon: <GraduationCap className="h-8 w-8" />,
@@ -80,13 +72,6 @@ const Frappe = () => {
       description: "Herramienta de business intelligence y analytics. Crea dashboards interactivos, reportes personalizados y análisis de datos en tiempo real.",
       icon: <BarChart3 className="h-8 w-8" />,
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&h=300",
-      link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
-    },
-    {
-      title: "Frappe Desk",
-      description: "Aplicación móvil para acceder a todas tus aplicaciones Frappe desde cualquier dispositivo. Mantente conectado y productivo en movimiento.",
-      icon: <Smartphone className="h-8 w-8" />,
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&h=300",
       link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
     }
   ];
