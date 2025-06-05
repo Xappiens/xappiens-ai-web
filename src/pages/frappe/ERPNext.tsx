@@ -314,9 +314,6 @@ const ERPNext = () => {
                 Empieza ya 
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg">
-                Contactar Especialista
-              </Button>
             </div>
           </div>
         </div>
