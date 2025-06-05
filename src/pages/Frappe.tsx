@@ -122,26 +122,28 @@ const Frappe = () => {
 
               {/* Right Column - Code Preview */}
               <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-                <div className="relative">
-                  <img 
-                    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&h=600" 
-                    alt="Monitor showing programming code"
-                    className="rounded-2xl shadow-2xl w-full h-auto object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent rounded-2xl" />
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                  <div className="relative">
+                    <img 
+                      src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&h=600" 
+                      alt="Monitor showing programming code"
+                      className="rounded-2xl shadow-2xl w-full h-auto object-cover border-4 border-white/20 group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
                   
                   {/* Floating code elements */}
-                  <div className="absolute -top-4 -left-4 bg-card border rounded-lg p-3 shadow-lg animate-float">
+                  <div className="absolute -top-4 -left-4 bg-card border-2 border-blue-500/30 rounded-lg p-3 shadow-lg animate-float group-hover:scale-110 transition-transform duration-300">
                     <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <span className="text-sm font-mono">frappe.py</span>
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-sm font-mono bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">frappe.py</span>
                     </div>
                   </div>
                   
-                  <div className="absolute -bottom-4 -right-4 bg-card border rounded-lg p-3 shadow-lg animate-float delay-1000">
+                  <div className="absolute -bottom-4 -right-4 bg-card border-2 border-purple-500/30 rounded-lg p-3 shadow-lg animate-float delay-1000 group-hover:scale-110 transition-transform duration-300">
                     <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                      <span className="text-sm font-mono">API Ready</span>
+                      <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse delay-500"></div>
+                      <span className="text-sm font-mono bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">API Ready</span>
                     </div>
                   </div>
                 </div>
