@@ -11,33 +11,33 @@ const Consultoria = () => {
       <Navbar />
       <div className="pt-20"> {/* Adding padding for the fixed navbar */}
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-orange-900 via-red-800 to-pink-900 text-white py-24 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-xappiens-blue via-xappiens-purple to-xappiens-sky text-white py-24 overflow-hidden">
           {/* Animated background elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-14 left-14 w-22 h-22 bg-orange-400/20 rounded-full animate-float"></div>
-            <div className="absolute top-38 right-18 w-16 h-16 bg-red-400/20 rounded-full animate-float" style={{animationDelay: '1.3s'}}></div>
-            <div className="absolute bottom-30 left-1/4 w-12 h-12 bg-pink-400/20 rounded-full animate-float" style={{animationDelay: '0.6s'}}></div>
-            <div className="absolute top-2/5 right-1/3 w-8 h-8 bg-orange-400/20 rounded-full animate-float" style={{animationDelay: '2.2s'}}></div>
+            <div className="absolute top-14 left-14 w-22 h-22 bg-xappiens-purple/20 rounded-full animate-float"></div>
+            <div className="absolute top-38 right-18 w-16 h-16 bg-xappiens-sky/20 rounded-full animate-float" style={{animationDelay: '1.3s'}}></div>
+            <div className="absolute bottom-30 left-1/4 w-12 h-12 bg-blue-400/20 rounded-full animate-float" style={{animationDelay: '0.6s'}}></div>
+            <div className="absolute top-2/5 right-1/3 w-8 h-8 bg-xappiens-purple/20 rounded-full animate-float" style={{animationDelay: '2.2s'}}></div>
           </div>
           
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="max-w-5xl mx-auto text-center">
               <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6 animate-fade-in">
-                <Lightbulb className="h-4 w-4 text-orange-400 mr-2" />
+                <Lightbulb className="h-4 w-4 text-xappiens-sky mr-2" />
                 <span className="text-white text-sm font-medium">Asesoramiento Estratégico Experto</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fade-in">
-                <span className="bg-gradient-to-r from-white via-orange-100 to-pink-100 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
                   Consultoría Tecnológica
                 </span>
                 <br />
-                <span className="text-3xl md:text-5xl bg-gradient-to-r from-orange-200 to-pink-200 bg-clip-text text-transparent">
+                <span className="text-3xl md:text-5xl bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
                   que Acelera Resultados
                 </span>
               </h1>
               
-              <p className="text-xl md:text-2xl mb-10 text-orange-100 leading-relaxed animate-fade-in max-w-4xl mx-auto" style={{animationDelay: '0.2s'}}>
+              <p className="text-xl md:text-2xl mb-10 text-blue-100 leading-relaxed animate-fade-in max-w-4xl mx-auto" style={{animationDelay: '0.2s'}}>
                 Transformamos desafíos empresariales en oportunidades de crecimiento 
                 con estrategias tecnológicas innovadoras y orientadas a resultados.
               </p>
@@ -46,7 +46,7 @@ const Consultoria = () => {
                 <Link to="/contacto">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-to-r from-orange-600 to-pink-600 hover:from-orange-700 hover:to-pink-700 text-white border-0 px-8 py-4 text-lg group"
+                    className="bg-gradient-to-r from-xappiens-purple to-xappiens-sky hover:from-purple-700 hover:to-sky-700 text-white border-0 px-8 py-4 text-lg group"
                   >
                     <Users className="mr-2 h-5 w-5" />
                     Potencia tu estrategia
@@ -64,10 +64,10 @@ const Consultoria = () => {
                 <img 
                   src="/images/consultoria.jpg" 
                   alt="Consultoría tecnológica" 
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl border border-white/20 transition-all duration-700 ease-out group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-[0_50px_100px_rgba(251,146,60,0.3)] cursor-pointer relative z-10"
+                  className="w-full h-96 object-cover rounded-2xl shadow-2xl border border-white/20 transition-all duration-700 ease-out group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-[0_50px_100px_rgba(139,92,246,0.3)] cursor-pointer relative z-10"
                 />
                 {/* Glow effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-orange-500/20 via-red-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform group-hover:scale-110"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-xappiens-purple/20 via-xappiens-sky/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform group-hover:scale-110"></div>
               </div>
             </div>
           </div>
