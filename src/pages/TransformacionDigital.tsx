@@ -63,8 +63,8 @@ const TransformacionDigital = () => {
             <div className="max-w-5xl mx-auto">
               <div className="relative group">
                 <img 
-                  src="/images/cloud-computing.jpg" 
-                  alt="Transformación digital y cloud computing" 
+                  src="/images/td-industrial.webp" 
+                  alt="Transformación digital industrial" 
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl border border-white/20 transition-all duration-700 ease-out group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-[0_50px_100px_rgba(34,211,238,0.3)] cursor-pointer relative z-10"
                 />
                 {/* Glow effect */}
@@ -118,7 +118,7 @@ const TransformacionDigital = () => {
                 </div>
               </div>
               <div className="md:w-1/2">
-                <img src="/images/td-industrial.webp" alt="Transformación digital industrial" className="aspect-video bg-gray-200 rounded-lg object-cover w-full" />
+                <img src="/images/cloud-computing.jpg" alt="Transformación digital industrial" className="aspect-video bg-gray-200 rounded-lg object-cover w-full" />
               </div>
             </div>
           </div>
