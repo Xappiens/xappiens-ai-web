@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -135,9 +136,12 @@ const Navbar = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <Link to="/contacto" className="hover:text-primary">
-              Contacto
+            <Link to="/inteligencia-artificial" className="hover:text-primary">
+              Inteligencia Artificial
             </Link>
+            <Button asChild className="ml-2">
+              <Link to="/contacto">Contacto</Link>
+            </Button>
             <a
               href="https://wa.me/34614230720"
               target="_blank"
@@ -236,12 +240,17 @@ const Navbar = () => {
                 </div>
               </div>
               <Link
-                to="/contacto"
+                to="/inteligencia-artificial"
                 className="hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >
-                Contacto
+                Inteligencia Artificial
               </Link>
+              <Button asChild className="w-full">
+                <Link to="/contacto" onClick={() => setIsOpen(false)}>
+                  Contacto
+                </Link>
+              </Button>
               <a
                 href="https://wa.me/34614230720"
                 target="_blank"
