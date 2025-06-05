@@ -9,8 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowRight, Cloud, Code, Globe, Shield, Terminal, Zap, Database, Layers, GitBranch, Rocket, Users } from "lucide-react";
+import { ArrowRight, Cloud, Code, Globe, Shield, Terminal, Zap, Database, Layers, GitBranch, Rocket, Users, Building2, BookOpen, MessageSquare, Smartphone, ShoppingCart, GraduationCap, BarChart3 } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Frappe = () => {
@@ -32,6 +31,65 @@ const Frappe = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  const frappeProducts = [
+    {
+      title: "ERPNext",
+      description: "Sistema ERP completo de código abierto que integra contabilidad, inventario, recursos humanos, CRM, manufactura y más en una sola plataforma.",
+      icon: <Building2 className="h-8 w-8" />,
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&h=300",
+      link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
+    },
+    {
+      title: "Frappe CRM",
+      description: "Sistema de gestión de relaciones con clientes moderno y flexible. Optimiza tus procesos comerciales con gestión completa de leads y oportunidades.",
+      icon: <Users className="h-8 w-8" />,
+      image: "https://images.unsplash.com/photo-1553028826-f4804151e2bd?auto=format&fit=crop&w=600&h=300",
+      link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
+    },
+    {
+      title: "Frappe Wiki",
+      description: "Plataforma de documentación y gestión del conocimiento. Ideal para crear bases de conocimiento, manuales y documentación colaborativa.",
+      icon: <BookOpen className="h-8 w-8" />,
+      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=600&h=300",
+      link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
+    },
+    {
+      title: "Frappe Chat",
+      description: "Sistema de mensajería y comunicación empresarial integrado. Facilita la colaboración en equipo con chat en tiempo real y notificaciones.",
+      icon: <MessageSquare className="h-8 w-8" />,
+      image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=600&h=300",
+      link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
+    },
+    {
+      title: "Frappe LMS",
+      description: "Sistema de gestión de aprendizaje para crear y gestionar cursos online. Incluye seguimiento de progreso, evaluaciones y certificaciones.",
+      icon: <GraduationCap className="h-8 w-8" />,
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&h=300",
+      link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
+    },
+    {
+      title: "Frappe eCommerce",
+      description: "Plataforma de comercio electrónico integrada con ERPNext. Gestiona tienda online, inventario, pagos y logística en una sola solución.",
+      icon: <ShoppingCart className="h-8 w-8" />,
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&h=300",
+      link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
+    },
+    {
+      title: "Frappe Insights",
+      description: "Herramienta de business intelligence y analytics. Crea dashboards interactivos, reportes personalizados y análisis de datos en tiempo real.",
+      icon: <BarChart3 className="h-8 w-8" />,
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&h=300",
+      link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
+    },
+    {
+      title: "Frappe Desk",
+      description: "Aplicación móvil para acceder a todas tus aplicaciones Frappe desde cualquier dispositivo. Mantente conectado y productivo en movimiento.",
+      icon: <Smartphone className="h-8 w-8" />,
+      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&h=300",
+      link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -298,127 +356,82 @@ const Frappe = () => {
       {/* Products Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">
-            Nuestros Productos
-          </h2>
-          <Tabs defaultValue="erpnext" className="max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="erpnext" className="text-base">ERPNext</TabsTrigger>
-              <TabsTrigger value="crm" className="text-base">Frappe CRM</TabsTrigger>
-              <TabsTrigger value="raven" className="text-base">Raven AI</TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="erpnext" className="mt-6">
-              <Card className="border-none shadow-xl">
-                <CardHeader className="text-center pb-6">
-                  <CardTitle className="text-3xl">ERPNext</CardTitle>
-                  <CardDescription className="text-lg">
-                    El sistema ERP de código abierto más completo del mercado
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div>
-                    <p className="text-lg mb-6 leading-relaxed">
-                      ERPNext integra todas las áreas de tu empresa en una única plataforma: 
-                      contabilidad, inventario, recursos humanos, CRM y más.
-                    </p>
-                    <Button 
-                      size="lg" 
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                      asChild
-                    >
-                      <a href="https://frappecloud.com/dashboard/signup?referrer=f23e580a" target="_blank" rel="noopener noreferrer">
-                        <Rocket className="mr-2 h-5 w-5" />
-                        Probar ERPNext
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </a>
-                    </Button>
-                  </div>
-                  <div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Ecosistema Frappe</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Descubre todas las aplicaciones que forman parte del ecosistema Frappe, diseñadas para cubrir todas las necesidades de tu empresa
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto space-y-8">
+            {frappeProducts.map((product, index) => (
+              <Card key={index} className="border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-card to-card/80 overflow-hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                  {/* Image Section */}
+                  <div className="relative overflow-hidden lg:col-span-1">
                     <img 
-                      src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=600&h=400" 
-                      alt="Business innovation"
-                      className="rounded-xl shadow-lg w-full"
+                      src={product.image} 
+                      alt={product.title}
+                      className="w-full h-64 lg:h-full object-cover transition-transform duration-500 hover:scale-110"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent"></div>
+                    <div className="absolute top-4 left-4">
+                      <div className="w-12 h-12 bg-white/90 backdrop-blur rounded-2xl flex items-center justify-center text-primary shadow-lg">
+                        {product.icon}
+                      </div>
+                    </div>
                   </div>
-                </CardContent>
+
+                  {/* Content Section */}
+                  <div className="lg:col-span-2 p-8 flex flex-col justify-center">
+                    <CardHeader className="p-0 pb-4">
+                      <CardTitle className="text-2xl lg:text-3xl mb-2 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                        {product.title}
+                      </CardTitle>
+                      <CardDescription className="text-base lg:text-lg leading-relaxed text-muted-foreground">
+                        {product.description}
+                      </CardDescription>
+                    </CardHeader>
+                    
+                    <CardContent className="p-0">
+                      <Button 
+                        size="lg" 
+                        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                        asChild
+                      >
+                        <a href={product.link} target="_blank" rel="noopener noreferrer">
+                          <Rocket className="mr-2 h-5 w-5" />
+                          Probar {product.title}
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </div>
+                </div>
               </Card>
-            </TabsContent>
-            
-            <TabsContent value="crm" className="mt-6">
-              <Card className="border-none shadow-xl">
-                <CardHeader className="text-center pb-6">
-                  <CardTitle className="text-3xl">Frappe CRM</CardTitle>
-                  <CardDescription className="text-lg">
-                    Gestión de relaciones con clientes moderna y flexible
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div>
-                    <p className="text-lg mb-6 leading-relaxed">
-                      Optimiza tus procesos comerciales con un CRM que se adapta a tus necesidades, 
-                      no al revés. Gestión completa de leads, oportunidades y clientes.
-                    </p>
-                    <Button 
-                      size="lg" 
-                      className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
-                      asChild
-                    >
-                      <a href="https://frappecloud.com/dashboard/signup?referrer=f23e580a" target="_blank" rel="noopener noreferrer">
-                        <Users className="mr-2 h-5 w-5" />
-                        Probar Frappe CRM
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </a>
-                    </Button>
-                  </div>
-                  <div>
-                    <img 
-                      src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&h=400" 
-                      alt="CRM dashboard"
-                      className="rounded-xl shadow-lg w-full"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            
-            <TabsContent value="raven" className="mt-6">
-              <Card className="border-none shadow-xl">
-                <CardHeader className="text-center pb-6">
-                  <CardTitle className="text-3xl">Raven AI</CardTitle>
-                  <CardDescription className="text-lg">
-                    Inteligencia artificial para la automatización de procesos
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div>
-                    <p className="text-lg mb-6 leading-relaxed">
-                      Automatiza tareas, analiza datos y mejora la eficiencia operativa con 
-                      nuestra plataforma de IA integrada perfectamente con Frappe.
-                    </p>
-                    <Button 
-                      size="lg" 
-                      className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700"
-                      asChild
-                    >
-                      <a href="https://frappecloud.com/dashboard/signup?referrer=f23e580a" target="_blank" rel="noopener noreferrer">
-                        <Zap className="mr-2 h-5 w-5" />
-                        Probar Raven AI
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </a>
-                    </Button>
-                  </div>
-                  <div>
-                    <img 
-                      src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&h=400" 
-                      alt="AI and automation"
-                      className="rounded-xl shadow-lg w-full"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <div className="bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-blue-900/10 rounded-3xl p-12">
+              <h3 className="text-3xl font-bold mb-4">¿Listo para construir tu propio ecosistema?</h3>
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Con Frappe Framework puedes crear tus propias aplicaciones personalizadas que se integren perfectamente con todo el ecosistema
+              </p>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-xl px-8 py-4 shadow-xl hover:shadow-2xl transition-all duration-300"
+                asChild
+              >
+                <a href="https://frappecloud.com/dashboard/signup?referrer=f23e580a" target="_blank" rel="noopener noreferrer">
+                  <Code className="mr-3 h-6 w-6" />
+                  Empezar a Desarrollar
+                  <ArrowRight className="ml-3 h-6 w-6" />
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
