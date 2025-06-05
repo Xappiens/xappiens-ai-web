@@ -43,7 +43,7 @@ const Frappe = () => {
       title: "Frappe CRM",
       description: "Sistema de gestión de relaciones con clientes moderno y flexible. Optimiza tus procesos comerciales con gestión completa de leads y oportunidades.",
       icon: <Users className="h-8 w-8" />,
-      image: "https://images.unsplash.com/photo-1553028826-f4804151e2bd?auto=format&fit=crop&w=600&h=300",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&h=300",
       link: "https://frappecloud.com/dashboard/signup?referrer=f23e580a"
     },
     {
