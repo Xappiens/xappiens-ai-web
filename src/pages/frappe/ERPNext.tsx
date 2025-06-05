@@ -1,4 +1,3 @@
-
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
@@ -54,14 +53,20 @@ const ERPNext = () => {
           </div>
         </div>
         
-        {/* Hero Image with hover effect */}
+        {/* Hero Image with dynamic hover effect */}
         <div className="container mx-auto px-4 mt-16 animate-fade-in" style={{animationDelay: '0.6s'}}>
           <div className="max-w-5xl mx-auto">
-            <img 
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop"
-              alt="ERPNext Dashboard"
-              className="w-full rounded-2xl shadow-2xl animate-tilt border border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-3xl hover:border-white/40 cursor-pointer"
-            />
+            <div className="relative group">
+              <img 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop"
+                alt="ERPNext Dashboard"
+                className="w-full rounded-2xl shadow-2xl animate-tilt border border-white/20 transition-all duration-700 ease-out group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-[0_50px_100px_rgba(59,130,246,0.3)] cursor-pointer relative z-10"
+              />
+              {/* Glow effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform group-hover:scale-110"></div>
+              {/* Secondary glow */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-purple-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105"></div>
+            </div>
           </div>
         </div>
       </section>
