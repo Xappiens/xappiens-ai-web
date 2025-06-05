@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
+import { Settings, Star, Layers } from 'lucide-react';
 
 const Servicios = () => {
   return (
@@ -11,14 +12,74 @@ const Servicios = () => {
       <Navbar />
       <div className="pt-20"> {/* Adding padding for the fixed navbar */}
         {/* Hero Section */}
-        <section className="bg-gradient-hero text-white py-16">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold mb-4">Nuestros Servicios</h1>
-              <p className="text-lg max-w-3xl mx-auto">
-                En Xappiens ofrecemos un amplio abanico de servicios tecnológicos 
-                para ayudar a tu empresa a crecer y adaptarse al entorno digital.
+        <section className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 text-white py-24 overflow-hidden">
+          {/* Animated background elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-16 left-16 w-20 h-20 bg-purple-400/20 rounded-full animate-float"></div>
+            <div className="absolute top-36 right-24 w-14 h-14 bg-indigo-400/20 rounded-full animate-float" style={{animationDelay: '1.2s'}}></div>
+            <div className="absolute bottom-24 left-1/3 w-10 h-10 bg-slate-400/20 rounded-full animate-float" style={{animationDelay: '2.1s'}}></div>
+            <div className="absolute top-2/3 right-1/4 w-6 h-6 bg-purple-400/20 rounded-full animate-float" style={{animationDelay: '0.7s'}}></div>
+          </div>
+          
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="max-w-5xl mx-auto text-center">
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6 animate-fade-in">
+                <Settings className="h-4 w-4 text-purple-400 mr-2" />
+                <span className="text-white text-sm font-medium">Soluciones Tecnológicas Integrales</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fade-in">
+                <span className="bg-gradient-to-r from-white via-purple-100 to-indigo-100 bg-clip-text text-transparent">
+                  Nuestros Servicios
+                </span>
+                <br />
+                <span className="text-3xl md:text-5xl bg-gradient-to-r from-purple-200 to-indigo-200 bg-clip-text text-transparent">
+                  Tecnología que Impulsa
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl mb-10 text-purple-100 leading-relaxed animate-fade-in max-w-4xl mx-auto" style={{animationDelay: '0.2s'}}>
+                Ofrecemos un ecosistema completo de servicios tecnológicos diseñados 
+                para potenciar el crecimiento y la innovación de tu empresa.
               </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{animationDelay: '0.4s'}}>
+                <Link to="/contacto">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white border-0 px-8 py-4 text-lg group"
+                  >
+                    <Star className="mr-2 h-5 w-5" />
+                    Explora nuestras soluciones
+                    <Layers className="ml-2 h-5 w-5 group-hover:animate-spin" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          {/* Hero visual elements */}
+          <div className="container mx-auto px-4 mt-16 animate-fade-in" style={{animationDelay: '0.6s'}}>
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { img: "/images/ia.jpg", title: "IA" },
+                  { img: "/images/td.jpg", title: "Transformación" },
+                  { img: "/images/da.jpg", title: "Desarrollo" },
+                  { img: "/images/outsourcing.jpg", title: "Outsourcing" }
+                ].map((service, index) => (
+                  <div key={index} className="relative group">
+                    <img 
+                      src={service.img} 
+                      alt={service.title}
+                      className="w-full h-32 object-cover rounded-xl shadow-lg border border-white/20 transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_20px_40px_rgba(139,92,246,0.3)]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-2">
+                      <span className="text-white text-sm font-semibold">{service.title}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

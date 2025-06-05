@@ -1,9 +1,9 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
+import { Lightbulb, Users, TrendingUp } from 'lucide-react';
 
 const Consultoria = () => {
   return (
@@ -11,14 +11,64 @@ const Consultoria = () => {
       <Navbar />
       <div className="pt-20"> {/* Adding padding for the fixed navbar */}
         {/* Hero Section */}
-        <section className="bg-gradient-hero text-white py-16">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold mb-4">Consultoría Tecnológica</h1>
-              <p className="text-lg max-w-3xl mx-auto">
-                Asesoramiento estratégico para optimizar tus procesos, implementar nuevas 
-                tecnologías y potenciar la innovación en tu empresa.
+        <section className="relative bg-gradient-to-br from-orange-900 via-red-800 to-pink-900 text-white py-24 overflow-hidden">
+          {/* Animated background elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-14 left-14 w-22 h-22 bg-orange-400/20 rounded-full animate-float"></div>
+            <div className="absolute top-38 right-18 w-16 h-16 bg-red-400/20 rounded-full animate-float" style={{animationDelay: '1.3s'}}></div>
+            <div className="absolute bottom-30 left-1/4 w-12 h-12 bg-pink-400/20 rounded-full animate-float" style={{animationDelay: '0.6s'}}></div>
+            <div className="absolute top-2/5 right-1/3 w-8 h-8 bg-orange-400/20 rounded-full animate-float" style={{animationDelay: '2.2s'}}></div>
+          </div>
+          
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="max-w-5xl mx-auto text-center">
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6 animate-fade-in">
+                <Lightbulb className="h-4 w-4 text-orange-400 mr-2" />
+                <span className="text-white text-sm font-medium">Asesoramiento Estratégico Experto</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fade-in">
+                <span className="bg-gradient-to-r from-white via-orange-100 to-pink-100 bg-clip-text text-transparent">
+                  Consultoría Tecnológica
+                </span>
+                <br />
+                <span className="text-3xl md:text-5xl bg-gradient-to-r from-orange-200 to-pink-200 bg-clip-text text-transparent">
+                  que Acelera Resultados
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl mb-10 text-orange-100 leading-relaxed animate-fade-in max-w-4xl mx-auto" style={{animationDelay: '0.2s'}}>
+                Transformamos desafíos empresariales en oportunidades de crecimiento 
+                con estrategias tecnológicas innovadoras y orientadas a resultados.
               </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{animationDelay: '0.4s'}}>
+                <Link to="/contacto">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-orange-600 to-pink-600 hover:from-orange-700 hover:to-pink-700 text-white border-0 px-8 py-4 text-lg group"
+                  >
+                    <Users className="mr-2 h-5 w-5" />
+                    Potencia tu estrategia
+                    <TrendingUp className="ml-2 h-5 w-5 group-hover:animate-bounce" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          {/* Hero Image with dynamic hover effect */}
+          <div className="container mx-auto px-4 mt-16 animate-fade-in" style={{animationDelay: '0.6s'}}>
+            <div className="max-w-5xl mx-auto">
+              <div className="relative group">
+                <img 
+                  src="/images/consultoria.jpg" 
+                  alt="Consultoría tecnológica" 
+                  className="w-full h-96 object-cover rounded-2xl shadow-2xl border border-white/20 transition-all duration-700 ease-out group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-[0_50px_100px_rgba(251,146,60,0.3)] cursor-pointer relative z-10"
+                />
+                {/* Glow effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-orange-500/20 via-red-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform group-hover:scale-110"></div>
+              </div>
             </div>
           </div>
         </section>
@@ -66,7 +116,7 @@ const Consultoria = () => {
                 <h3 className="text-xl font-bold mb-4 text-xappiens-purple">Optimización de Procesos</h3>
                 <p className="text-gray-600 mb-6">
                   Analizamos tus procesos actuales para identificar ineficiencias y oportunidades 
-                  de mejora, implementando soluciones tecnológicas que aumenten la productividad 
+                  de mejora, implementando soluciones tecnológicas que aumentan la productividad 
                   y reduzcan costes.
                 </p>
                 <ul className="space-y-2 mb-6">

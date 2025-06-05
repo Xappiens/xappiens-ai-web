@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Link } from 'react-router-dom';
+import { GraduationCap, BookOpen, Target } from 'lucide-react';
 
 const Formacion = () => {
   return (
@@ -11,14 +12,64 @@ const Formacion = () => {
       <Navbar />
       <div className="pt-20"> {/* Adding padding for the fixed navbar */}
         {/* Hero Section */}
-        <section className="bg-gradient-hero text-white py-16">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold mb-4">Formación Especializada</h1>
-              <p className="text-lg max-w-3xl mx-auto">
-                Desarrolla el talento de tu equipo con nuestra formación especializada 
-                en tecnología, transformación digital e innovación.
+        <section className="relative bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 text-white py-24 overflow-hidden">
+          {/* Animated background elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-12 right-12 w-18 h-18 bg-emerald-400/20 rounded-full animate-float"></div>
+            <div className="absolute top-44 left-16 w-14 h-14 bg-teal-400/20 rounded-full animate-float" style={{animationDelay: '1.4s'}}></div>
+            <div className="absolute bottom-28 right-1/4 w-10 h-10 bg-cyan-400/20 rounded-full animate-float" style={{animationDelay: '0.9s'}}></div>
+            <div className="absolute top-1/2 left-1/3 w-6 h-6 bg-emerald-400/20 rounded-full animate-float" style={{animationDelay: '2.3s'}}></div>
+          </div>
+          
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="max-w-5xl mx-auto text-center">
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6 animate-fade-in">
+                <GraduationCap className="h-4 w-4 text-emerald-400 mr-2" />
+                <span className="text-white text-sm font-medium">Desarrollo Profesional Avanzado</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fade-in">
+                <span className="bg-gradient-to-r from-white via-emerald-100 to-teal-100 bg-clip-text text-transparent">
+                  Formación Especializada
+                </span>
+                <br />
+                <span className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-200 to-teal-200 bg-clip-text text-transparent">
+                  que Transforma Carreras
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl mb-10 text-emerald-100 leading-relaxed animate-fade-in max-w-4xl mx-auto" style={{animationDelay: '0.2s'}}>
+                Potenciamos el talento de tu equipo con programas formativos de vanguardia 
+                en tecnología, innovación y transformación digital.
               </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{animationDelay: '0.4s'}}>
+                <Link to="/contacto">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white border-0 px-8 py-4 text-lg group"
+                  >
+                    <BookOpen className="mr-2 h-5 w-5" />
+                    Eleva tu potencial
+                    <Target className="ml-2 h-5 w-5 group-hover:animate-pulse" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          {/* Hero Image with dynamic hover effect */}
+          <div className="container mx-auto px-4 mt-16 animate-fade-in" style={{animationDelay: '0.6s'}}>
+            <div className="max-w-5xl mx-auto">
+              <div className="relative group">
+                <img 
+                  src="/images/formacion.jpg" 
+                  alt="Formación especializada" 
+                  className="w-full h-96 object-cover rounded-2xl shadow-2xl border border-white/20 transition-all duration-700 ease-out group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-[0_50px_100px_rgba(16,185,129,0.3)] cursor-pointer relative z-10"
+                />
+                {/* Glow effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform group-hover:scale-110"></div>
+              </div>
             </div>
           </div>
         </section>
