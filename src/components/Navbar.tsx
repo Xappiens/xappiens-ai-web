@@ -1,22 +1,16 @@
-import { Menu, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "./ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "./ui/navigation-menu";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="w-full bg-white shadow-sm fixed top-0 z-50">
@@ -38,115 +32,107 @@ const Navbar = () => {
             >
               Inicio
             </Link>
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-xappiens-text hover:text-xappiens-purple transition">
-                    Servicios
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid w-[400px] gap-3 p-4">
-                      <NavigationMenuLink asChild>
-                        <Link
-                          to="/transformacion-digital"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">
-                            Transformación Digital
-                          </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Soluciones tecnológicas para la transformación de su
-                            negocio
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          to="/formacion"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">
-                            Formación
-                          </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Programas de formación especializados en tecnología
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          to="/consultoria"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">
-                            Consultoría
-                          </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Asesoramiento experto en tecnología y transformación
-                            digital
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="flex items-center gap-1">
+                  Servicios <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem asChild>
+                  <Link
+                    to="/transformacion-digital"
+                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                  >
+                    <div className="text-sm font-medium leading-none">
+                      Transformación Digital
                     </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-xappiens-text hover:text-xappiens-purple transition">
-                    Frappe
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid w-[400px] gap-3 p-4">
-                      <NavigationMenuLink asChild>
-                        <Link
-                          to="/erpnext"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">
-                            ERPNext
-                          </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Sistema ERP completo y de código abierto para la
-                            gestión empresarial
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          to="/frappe-crm"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">
-                            Frappe CRM
-                          </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Gestión de relaciones con clientes integrada y
-                            personalizable
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          to="/raven-ai"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">
-                            Raven AI
-                          </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Soluciones de inteligencia artificial para la
-                            automatización de procesos
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      Soluciones tecnológicas para la transformación de su
+                      negocio
+                    </p>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link
+                    to="/formacion"
+                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                  >
+                    <div className="text-sm font-medium leading-none">
+                      Formación
                     </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      Programas de formación especializados en tecnología
+                    </p>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link
+                    to="/consultoria"
+                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                  >
+                    <div className="text-sm font-medium leading-none">
+                      Consultoría
+                    </div>
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      Asesoramiento experto en tecnología y transformación
+                      digital
+                    </p>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="flex items-center gap-1">
+                  Frappe <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem asChild>
+                  <Link
+                    to="/erpnext"
+                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                  >
+                    <div className="text-sm font-medium leading-none">
+                      ERPNext
+                    </div>
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      Sistema ERP completo y de código abierto para la gestión
+                      empresarial
+                    </p>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link
+                    to="/frappe-crm"
+                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                  >
+                    <div className="text-sm font-medium leading-none">
+                      Frappe CRM
+                    </div>
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      Gestión de relaciones con clientes integrada y
+                      personalizable
+                    </p>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link
+                    to="/raven-ai"
+                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                  >
+                    <div className="text-sm font-medium leading-none">
+                      Raven AI
+                    </div>
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      Soluciones de inteligencia artificial para la
+                      automatización de procesos
+                    </p>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Link
               to="/inteligencia-artificial"
               className="text-xappiens-text hover:text-xappiens-purple transition"
@@ -174,19 +160,35 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-600 hover:text-gray-900"
-            onClick={toggleMenu}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
-            <Menu className="h-6 w-6" />
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {isOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
+        {isOpen && (
           <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               <Link
                 to="/"
                 className="text-xappiens-text hover:text-xappiens-purple transition"
+                onClick={() => setIsOpen(false)}
               >
                 Inicio
               </Link>
@@ -197,18 +199,21 @@ const Navbar = () => {
                 <Link
                   to="/transformacion-digital"
                   className="pl-4 text-xappiens-text hover:text-xappiens-purple transition"
+                  onClick={() => setIsOpen(false)}
                 >
                   Transformación Digital
                 </Link>
                 <Link
                   to="/formacion"
                   className="pl-4 text-xappiens-text hover:text-xappiens-purple transition"
+                  onClick={() => setIsOpen(false)}
                 >
                   Formación
                 </Link>
                 <Link
                   to="/consultoria"
                   className="pl-4 text-xappiens-text hover:text-xappiens-purple transition"
+                  onClick={() => setIsOpen(false)}
                 >
                   Consultoría
                 </Link>
@@ -218,18 +223,21 @@ const Navbar = () => {
                 <Link
                   to="/erpnext"
                   className="pl-4 text-xappiens-text hover:text-xappiens-purple transition"
+                  onClick={() => setIsOpen(false)}
                 >
                   ERPNext
                 </Link>
                 <Link
                   to="/frappe-crm"
                   className="pl-4 text-xappiens-text hover:text-xappiens-purple transition"
+                  onClick={() => setIsOpen(false)}
                 >
                   Frappe CRM
                 </Link>
                 <Link
                   to="/raven-ai"
                   className="pl-4 text-xappiens-text hover:text-xappiens-purple transition"
+                  onClick={() => setIsOpen(false)}
                 >
                   Raven AI
                 </Link>
@@ -237,10 +245,11 @@ const Navbar = () => {
               <Link
                 to="/inteligencia-artificial"
                 className="text-xappiens-text hover:text-xappiens-purple transition"
+                onClick={() => setIsOpen(false)}
               >
                 Inteligencia Artificial
               </Link>
-              <Link to="/contacto">
+              <Link to="/contacto" onClick={() => setIsOpen(false)}>
                 <Button className="w-full bg-xappiens-purple text-white hover:bg-xappiens-blue transition-colors duration-200">
                   Contacto
                 </Button>
@@ -250,6 +259,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full"
+                onClick={() => setIsOpen(false)}
               >
                 <Button className="w-full bg-green-600 text-white hover:bg-green-700 transition-colors duration-200">
                   <MessageCircle className="h-4 w-4 mr-2" />
