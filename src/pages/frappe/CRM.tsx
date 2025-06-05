@@ -47,7 +47,7 @@ const CRM = () => {
                 className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white border-0 px-8 py-4 text-lg group"
                 onClick={() => window.open('https://frappecloud.com/dashboard/signup?referrer=f23e580a', '_blank')}
               >
-                Prueba gratis 
+                Empieza ya
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
@@ -370,7 +370,7 @@ const CRM = () => {
                 className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 text-lg group shadow-lg"
                 onClick={() => window.open('https://frappecloud.com/dashboard/signup?referrer=f23e580a', '_blank')}
               >
-                Prueba gratis 30 días 
+                Empieza ya
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
